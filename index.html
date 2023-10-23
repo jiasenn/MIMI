@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>MBTI Personality Quiz</title>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Historical Character Archetype Quiz</h1>
+        <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+    
+    <div id="question-container" class="hidden">
+        <div id="question1">
+            <h1>Question 1</h1>
+            <p>Your Question Here?</p>
+            <button onclick="nextQuestion('q1=a')">A</button>
+            <button onclick="nextQuestion('q1=b')">B</button>
+            <button onclick="nextQuestion('q1=c')">C</button>
+            <button onclick="nextQuestion('q1=d')">D</button>
+        </div>
+        
+        <div id="question2" class="hidden">
+            <h1>Question 2</h1>
+            <p>Your Question Here?</p>
+            <button onclick="nextQuestion('q2=a')">A</button>
+            <button onclick="nextQuestion('q2=b')">B</button>
+            <button onclick="nextQuestion('q2=c')">C</button>
+            <button onclick="nextQuestion('q2=d')">D</button>
+        </div>
+        <!-- Add more questions as needed -->
+    </div>
+    
+    <script src="quiz.js"></script>
+</body>
+</html>
