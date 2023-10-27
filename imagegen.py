@@ -22,18 +22,19 @@ lmain.place(x=10, y=110)
 
 modelid = "CompVis/stable-diffusion-v1-4"
 device = "cuda"
+    
 pipe = StableDiffusionPipeline.from_pretrained(modelid, revision="fp16", torch_dtype=torch.float16, use_auth_token=auth_token) 
 pipe.to(device) 
 
 def generate(): 
     with autocast(device): 
-        image = pipe(prompt.get(), guidance_scale=8.5)["sample"][0]
-    
+        image = pipe(prompt.get(), guidance_scale=8.5)['sample'][0]
+
     image.save('generatedimage.png')
     img = ImageTk.PhotoImage(image)
     lmain.configure(image=img) 
 
-trigger = ctk.CTkButton(height=40, width=120, text_font=("Arial", 20), text_color="white", fg_color="blue", command=generate) 
+trigger = ctk.CTkButton(app, height=40, width=120, font=("Arial", 20), text_color="white", fg_color="blue", command=generate) 
 trigger.configure(text="Generate") 
 trigger.place(x=206, y=60) 
 
