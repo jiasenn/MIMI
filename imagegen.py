@@ -5,6 +5,7 @@ from PIL import ImageTk
 from apikey import apikey as auth_token
 
 import torch
+print(torch.__version__)
 from torch import autocast
 from diffusers import StableDiffusionPipeline 
 
