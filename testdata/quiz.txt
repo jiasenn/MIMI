@@ -5,61 +5,61 @@ Welcome to "CityScape Singapore"! As you navigate the bustling streets and seren
 
 Questions:
 
-1. Morning Routine: How do you start your day in CityScape?
-    - Checking news and updates for the city. (+1 Colonial Administrator)
-    - Heading straight to work, no time to lose. (+1 Coolie/Immigrant Labourer)
-    - Taking care of family or neighbors. (+1 Samsui Woman)
-    - Visiting a community garden or local park. (+1 Fisherman/Villager)
-    - Participating in a community rally or cause. (+1 Freedom Fighter)
+Question 1. Morning Routine: How do you start your day in CityScape?
+    1. Checking news and updates for the city. (+1 Colonial Administrator)
+    2. Heading straight to work, no time to lose. (+1 Coolie/Immigrant Labourer)
+    3. Taking care of family or neighbors. (+1 Samsui Woman)
+    4. Visiting a community garden or local park. (+1 Fisherman/Villager)
+    5. Participating in a community rally or cause. (+1 Freedom Fighter)
 
-2. Preferred Transport: How do you move around CityScape?
-    - Chauffeured car or private cab. (+1 Colonial Administrator)
-    - Public transport, mingling with the crowds. (+1 Coolie/Immigrant Labourer)
-    - Walking, while helping others along the way. (+1 Samsui Woman)
-    - Bicycle or eco-friendly options. (+1 Fisherman/Villager)
-    - Organizing carpools or group rides. (+1 Freedom Fighter)
+Question 2. Preferred Transport: How do you move around CityScape?
+    1. Chauffeured car or private cab. (+1 Colonial Administrator)
+    2. Public transport, mingling with the crowds. (+1 Coolie/Immigrant Labourer)
+    3. Walking, while helping others along the way. (+1 Samsui Woman)
+    4. Bicycle or eco-friendly options. (+1 Fisherman/Villager)
+    5. Organizing carpools or group rides. (+1 Freedom Fighter)
 
-3. City Event: Which event are you most likely to attend?
-    - A leadership summit or conference. (+1 Pioneer Politician)
-    - A cultural festival celebrating heritage. (+1 Straits Chinese)
-    - A community mentorship program. (+1 Kampong Leader)
-    - A trade fair or business expo. (+1 Tradesman/Merchant)
-    - An educational seminar or workshop. (+1 Educator)
+Question 3. City Event: Which event are you most likely to attend?
+    1. A leadership summit or conference. (+1 Pioneer Politician)
+    2. A cultural festival celebrating heritage. (+1 Straits Chinese)
+    3. A community mentorship program. (+1 Kampong Leader)
+    4. A trade fair or business expo. (+1 Tradesman/Merchant)
+    5. An educational seminar or workshop. (+1 Educator)
 
-4. Weekend Activity: How do you spend your weekends in CityScape?
-    - Planning for the city's growth and development. (+1 Pioneer Politician)
-    - Exploring cultural districts and traditions. (+1 Straits Chinese)
-    - Organizing or attending community meetings. (+1 Kampong Leader)
-    - Checking out new business opportunities. (+1 Tradesman/Merchant)
-    - Volunteering or teaching. (+1 Educator)
+Question 4. Weekend Activity: How do you spend your weekends in CityScape?
+    1. Planning for the city's growth and development. (+1 Pioneer Politician)
+    2. Exploring cultural districts and traditions. (+1 Straits Chinese)
+    3. Organizing or attending community meetings. (+1 Kampong Leader)
+    4. Checking out new business opportunities. (+1 Tradesman/Merchant)
+    5. Volunteering or teaching. (+1 Educator)
 
-5. Night Out: Your idea of a perfect night out in CityScape?
-    - An elite gathering or gala. (+1 Colonial Administrator)
-    - A vibrant street food market. (+1 Coolie/Immigrant Labourer)
-    - A family or community dinner. (+1 Samsui Woman)
-    - A lakeside picnic or nature walk. (+1 Fisherman/Villager)
-    - Attending a social activism event. (+1 Freedom Fighter)
+Question 5. Night Out: Your idea of a perfect night out in CityScape?
+    1. An elite gathering or gala. (+1 Colonial Administrator)
+    2. A vibrant street food market. (+1 Coolie/Immigrant Labourer)
+    3. A family or community dinner. (+1 Samsui Woman)
+    4. A lakeside picnic or nature walk. (+1 Fisherman/Villager)
+    5. Attending a social activism event. (+1 Freedom Fighter)
 
-6. City Issue: CityScape faces a challenge. How do you tackle it?
-    - Gather leaders and strategize. (+1 Pioneer Politician)
-    - Collaborate with communities for solutions. (+1 Straits Chinese)
-    - Offer guidance and wisdom to those affected. (+1 Kampong Leader)
-    - Invest resources and find economic solutions. (+1 Tradesman/Merchant)
-    - Educate the public on the issue. (+1 Educator)
+Question 6. City Issue: CityScape faces a challenge. How do you tackle it?
+    1. Gather leaders and strategize. (+1 Pioneer Politician)
+    2. Collaborate with communities for solutions. (+1 Straits Chinese)
+    3. Offer guidance and wisdom to those affected. (+1 Kampong Leader)
+    4. Invest resources and find economic solutions. (+1 Tradesman/Merchant)
+    5. Educate the public on the issue. (+1 Educator)
 
-7. Vacation Spot: Where would you unwind outside CityScape?
-    - A luxurious retreat. (+1 Colonial Administrator)
-    - A backpacking adventure. (+1 Coolie/Immigrant Labourer)
-    - A family-friendly resort. (+1 Samsui Woman)
-    - A nature-based getaway. (+1 Fisherman/Villager)
-    - A historical or educational tour. (+1 Educator)
+Question 7. Vacation Spot: Where would you unwind outside CityScape?
+    1. A luxurious retreat. (+1 Colonial Administrator)
+    2. A backpacking adventure. (+1 Coolie/Immigrant Labourer)
+    3. A family-friendly resort. (+1 Samsui Woman)
+    4. A nature-based getaway. (+1 Fisherman/Villager)
+    5. A historical or educational tour. (+1 Educator)
 
-8. City Legacy: What do you wish to contribute to CityScape?
-    - Visionary leadership and governance. (+1 Pioneer Politician)
-    - Preservation of culture and traditions. (+1 Straits Chinese)
-    - Community bonding and mentorship. (+1 Kampong Leader)
-    - Economic growth and business opportunities. (+1 Tradesman/Merchant)
-    - Knowledge and education for all. (+1 Educator)
+Question 8. City Legacy: What do you wish to contribute to CityScape?
+    1. Visionary leadership and governance. (+1 Pioneer Politician)
+    2. Preservation of culture and traditions. (+1 Straits Chinese)
+    3. Community bonding and mentorship. (+1 Kampong Leader)
+    4. Economic growth and business opportunities. (+1 Tradesman/Merchant)
+    5. Knowledge and education for all. (+1 Educator)
 
 Results:
 

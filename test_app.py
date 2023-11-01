@@ -77,10 +77,50 @@ def calculate_result(archetypes):
     max_archetype = max(archetypes, key=archetypes.get)
     return max_archetype
 
+import logging
+import sys
+
+from llama_index.callbacks import CallbackManager, LlamaDebugHandler
+from llama_index.llms import LlamaCPP
+from llama_index.llms.llama_utils import messages_to_prompt, completion_to_prompt
+
+logging.basicConfig(stream=sys.stdout, level=logging.INFO)  # Change INFO to DEBUG if you want more extensive logging
+logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
+
+llama_debug = LlamaDebugHandler(print_trace_on_end=True)
+callback_manager = CallbackManager([llama_debug])
+
+llm = LlamaCPP(
+    model_url="https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF/resolve/main/llama-2-13b-chat.Q5_K_M.gguf",
+    
+    # optionally, you can set the path to a pre-downloaded model instead of model_url
+    model_path=None,
+    
+    temperature=0.0,
+    max_new_tokens=1024,
+    
+    # llama2 has a context window of 4096 tokens, but we set it lower to allow for some wiggle room
+    context_window=3900,  # note, this sets n_ctx in the model_kwargs below, so you don't need to pass it there.
+    
+    # kwargs to pass to __call__()
+    generate_kwargs={},
+    
+    # kwargs to pass to __init__()
+    # set to at least 1 to use GPU
+    model_kwargs={"n_gpu_layers": 30}, # I need to play with this and see if it actually helps
+    
+    # transform inputs into Llama2 format
+    messages_to_prompt=messages_to_prompt,
+    completion_to_prompt=completion_to_prompt,
+    verbose=True,
+)
+
+
+
 # Start the quiz
 print("Welcome to CityScape Singapore - Discover Your Archetype!\n")
 print("Answer the following questions to find out which historical archetype resonates with your personality:")
-
+choices = []
 for i in range(0, len(questions), 6):
     print("\nQuestion " + str(int(i/6) + 1))
     print("\n".join(questions[i:i+6]))
@@ -93,9 +133,16 @@ for i in range(0, len(questions), 6):
                 break  # Break out of the loop if a valid choice is provided
         except ValueError:
             print("Invalid input. Please enter a valid number.")
-
+    choices.append(choice)
     archetypes[list(archetypes.keys())[choice - 1]] += 1
 
 # Calculate and display the result
 result = calculate_result(archetypes)
+choices.append(result)
+
 print("\nYour result is: " + result)
+
+# Sace choices to a file
+with open("./testdata/choices.txt", "w") as file:
+    for choice in choices:
+        file.write(str(choice) + "\n")
