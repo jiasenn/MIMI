@@ -24,7 +24,7 @@ questions = [
     # Question 2
     "Preferred Transport: How do you move around CityScape?",
     "   1. Chauffeured car or private cab.",
-    "   2 Public transport, mingling with the crowds.",
+    "   2. Public transport, mingling with the crowds.",
     "   3. Walking, while helping others along the way.",
     "   4. Bicycle or eco-friendly options.",
     "   5. Organizing carpools or group rides.",
@@ -133,12 +133,12 @@ for i in range(0, len(questions), 6):
                 break  # Break out of the loop if a valid choice is provided
         except ValueError:
             print("Invalid input. Please enter a valid number.")
-    choices.append(choice)
+    choices.append("Question " + str(int(i/6) + 1) + ": Option " + str(choice))
     archetypes[list(archetypes.keys())[choice - 1]] += 1
 
 # Calculate and display the result
 result = calculate_result(archetypes)
-choices.append(result)
+choices.append("Archetype: " + result)
 
 print("\nYour result is: " + result)
 
