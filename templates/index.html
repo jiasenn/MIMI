@@ -12,83 +12,88 @@
         <h1>Historical Character Archetype Quiz</h1>
         <button onclick="startQuiz()">Start Quiz</button>
     </div>
-    
-    <div id="question-container" class="hidden">
-        <div id="question1">
-            <h1>Question 1</h1>
-            <p>Your Question Here?</p>
-            <button onclick="nextQuestion('q1=a')">A</button>
-            <button onclick="nextQuestion('q1=b')">B</button>
-            <button onclick="nextQuestion('q1=c')">C</button>
-            <button onclick="nextQuestion('q1=d')">D</button>
-            <button onclick="nextQuestion('q1=e')">E</button>
+    <!-- <form method="POST" action="/result"> -->
+        <div id="question-container" class="hidden">
+            <div id="question1">
+                <h1>Question 1</h1>
+                <p>Morning Routine: How do you start your day in CityScape?</p>
+                <button onclick="nextQuestion('q1=1')">Checking news and updates for the city.</button>
+                <button onclick="nextQuestion('q1=2')">Heading straight to work, no time to lose.</button>
+                <button onclick="nextQuestion('q1=3')">Taking care of family or neighbors.</button>
+                <button onclick="nextQuestion('q1=4')">Visiting a community garden or local park.</button>
+                <button onclick="nextQuestion('q1=5')">Participating in a community rally or cause.</button>
+            </div>
+            
+            <div id="question2" class="hidden">
+                <h1>Question 2</h1>
+                <p>Preferred Transport: How do you move around CityScape?</p>
+                <button onclick="nextQuestion('q2=1')">Chauffeured car or private cab.</button>
+                <button onclick="nextQuestion('q2=2')">Public transport, mingling with the crowds.</button>
+                <button onclick="nextQuestion('q2=3')">Walking, while helping others along the way.</button>
+                <button onclick="nextQuestion('q2=4')">Bicycle or eco-friendly options.</button>
+                <button onclick="nextQuestion('q2=5')">Organizing carpools or group rides.</button>
+            </div>
+            <!-- Add more questions as needed -->
+            <div id="question3" class="hidden">
+                <h1>Question 3</h1>
+                <p>City Event: Which event are you most likely to attend?</p>
+                <button onclick="nextQuestion('q3=1')">A leadership summit or conference.</button>
+                <button onclick="nextQuestion('q3=2')">A cultural festival celebrating heritage.</button>
+                <button onclick="nextQuestion('q3=3')">A community mentorship program.</button>
+                <button onclick="nextQuestion('q3=4')">A trade fair or business expo.</button>
+                <button onclick="nextQuestion('q3=5')">An educational seminar or workshop.</button>
+            </div>
+            <div id="question4" class="hidden">
+                <h1>Question 4</h1>
+                <p>Weekend Activity: How do you spend your weekends in CityScape?</p>
+                <button onclick="nextQuestion('q4=1')">Planning for the city's growth and development.</button>
+                <button onclick="nextQuestion('q4=2')">Exploring cultural districts and traditions.</button>
+                <button onclick="nextQuestion('q4=3')">Organizing or attending community meetings.</button>
+                <button onclick="nextQuestion('q4=4')">Checking out new business opportunities.</button>
+                <button onclick="nextQuestion('q4=5')">Volunteering or teaching.</button>
+            </div>
+            <div id="question5" class="hidden">
+                <h1>Question 5</h1>
+                <p>Night Out: Your idea of a perfect night out in CityScape?</p>
+                <button onclick="nextQuestion('q5=1')">An elite gathering or gala.</button>
+                <button onclick="nextQuestion('q5=2')">A vibrant street food market.</button>
+                <button onclick="nextQuestion('q5=3')">A family or community dinner.</button>
+                <button onclick="nextQuestion('q5=4')">A lakeside picnic or nature walk.</button>
+                <button onclick="nextQuestion('q5=5')">Attending a social activism event.</button>
+            </div>
+            <div id="question6" class="hidden">
+                <h1>Question 6</h1>
+                <p>City Issue: CityScape faces a challenge. How do you tackle it?</p>
+                <button onclick="nextQuestion('q6=1')">Gather leaders and strategize.</button>
+                <button onclick="nextQuestion('q6=2')">Collaborate with communities for solutions.</button>
+                <button onclick="nextQuestion('q6=3')">Offer guidance and wisdom to those affected.</button>
+                <button onclick="nextQuestion('q6=4')">Invest resources and find economic solutions.</button>
+                <button onclick="nextQuestion('q6=5')">Educate the public on the issue.</button>
+            </div>
+            <div id="question7" class="hidden">
+                <h1>Question 7</h1>
+                <p>Vacation Spot: Where would you unwind outside CityScape?</p>
+                <button onclick="nextQuestion('q7=1')">A luxurious retreat.</button>
+                <button onclick="nextQuestion('q7=2')">A backpacking adventure.</button>
+                <button onclick="nextQuestion('q7=3')">A family-friendly resort.</button>
+                <button onclick="nextQuestion('q7=4')">A nature-based getaway.</button>
+                <button onclick="nextQuestion('q7=5')">A historical or educational tour.</button>
+            </div>
+            <div id="question8" class="hidden">
+                <h1>Question 8</h1>
+                <p>City Legacy: What do you wish to contribute to CityScape?</p>
+                <button onclick="nextQuestion('q8=1')">Visionary leadership and governance.</button>
+                <button onclick="nextQuestion('q8=2')">Preservation of culture and traditions.</button>
+                <button onclick="nextQuestion('q8=3')">Community bonding and mentorship.</button>
+                <button onclick="nextQuestion('q8=4')">Economic growth and business opportunities.</button>
+                <button onclick="nextQuestion('q8=5')">Knowledge and education for all.</button>
+            </div>
+            <div id="question9" class="hidden">
+                <!-- button to generate image -->
+                <button onclick="nextQuestion()">Generate Image</button>
+            </div>
         </div>
-        
-        <div id="question2" class="hidden">
-            <h1>Question 2</h1>
-            <p>Your Question Here?</p>
-            <button onclick="nextQuestion('q2=a')">A</button>
-            <button onclick="nextQuestion('q2=b')">B</button>
-            <button onclick="nextQuestion('q2=c')">C</button>
-            <button onclick="nextQuestion('q2=d')">D</button>
-            <button onclick="nextQuestion('q2=e')">E</button>
-        </div>
-        <!-- Add more questions as needed -->
-        <div id="question3" class="hidden">
-            <h1>Question 3</h1>
-            <p>Your Question Here?</p>
-            <button onclick="nextQuestion('q3=a')">A</button>
-            <button onclick="nextQuestion('q3=b')">B</button>
-            <button onclick="nextQuestion('q3=c')">C</button>
-            <button onclick="nextQuestion('q3=d')">D</button>
-            <button onclick="nextQuestion('q3=e')">E</button>
-        </div>
-        <div id="question4" class="hidden">
-            <h1>Question 4</h1>
-            <p>Your Question Here?</p>
-            <button onclick="nextQuestion('q4=a')">A</button>
-            <button onclick="nextQuestion('q4=b')">B</button>
-            <button onclick="nextQuestion('q4=c')">C</button>
-            <button onclick="nextQuestion('q4=d')">D</button>
-            <button onclick="nextQuestion('q4=e')">E</button>
-        </div>
-        <div id="question5" class="hidden">
-            <h1>Question 5</h1>
-            <p>Your Question Here?</p>
-            <button onclick="nextQuestion('q5=a')">A</button>
-            <button onclick="nextQuestion('q5=b')">B</button>
-            <button onclick="nextQuestion('q5=c')">C</button>
-            <button onclick="nextQuestion('q5=d')">D</button>
-            <button onclick="nextQuestion('q5=e')">E</button>
-        </div>
-        <div id="question6" class="hidden">
-            <h1>Question 6</h1>
-            <p>Your Question Here?</p>
-            <button onclick="nextQuestion('q6=a')">A</button>
-            <button onclick="nextQuestion('q6=b')">B</button>
-            <button onclick="nextQuestion('q6=c')">C</button>
-            <button onclick="nextQuestion('q6=d')">D</button>
-            <button onclick="nextQuestion('q6=e')">E</button>
-        </div>
-        <div id="question7" class="hidden">
-            <h1>Question 7</h1>
-            <p>Your Question Here?</p>
-            <button onclick="nextQuestion('q7=a')">A</button>
-            <button onclick="nextQuestion('q7=b')">B</button>
-            <button onclick="nextQuestion('q7=c')">C</button>
-            <button onclick="nextQuestion('q7=d')">D</button>
-            <button onclick="nextQuestion('q7=e')">E</button>
-        </div>
-        <div id="question8" class="hidden">
-            <h1>Question 8</h1>
-            <p>Your Question Here?</p>
-            <button onclick="nextQuestion('q8=a')">A</button>
-            <button onclick="nextQuestion('q8=b')">B</button>
-            <button onclick="nextQuestion('q8=c')">C</button>
-            <button onclick="nextQuestion('q8=d')">D</button>
-            <button onclick="nextQuestion('q8=e')">E</button>
-        </div>
-    </div>
+    <!-- </form> -->
     <script src="{{ url_for('static', filename='quiz.js') }}"></script>
     <!-- <script src="./static/quiz.js"></script> -->
 </body>

@@ -11,10 +11,21 @@
 
 <div id="popup" class="hidden">
     <h2>Your MBTI Result</h2>
-    <p id="resultText"></p>
+    <p>
+        <!-- display generated response -->
+        Your Generated Panorama:
+        <!-- {{ results }} -->
+    </p>
     <!-- <img src="generatedpanorama.png" width="100%" title="this is a photo"> -->
-    <img src="{{ url_for('static', filename='generatedpanorama.png') }}" width="100%" title="this is a photo" style="vertical-align: top;">
+    <img src="{{ url_for('static', filename='generatedpanorama.png') }}" width="100%" title="this is a photo">
     <button onclick="window.location.href='/'">Try Again!</button>
+
+    <!-- Display quiz_answers -->
+    <!-- <h3>Your Quiz Answers:</h3> -->
+    <h4>
+        <!-- display generated response -->
+        {{ quiz_answers }}
+    </h4>
 </div>
 <script src="{{ url_for('static', filename='result.js') }}"></script>
 <!-- <script src="./static/result.js"></script> -->

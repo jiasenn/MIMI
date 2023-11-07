@@ -1,9 +1,8 @@
-Question 1: Option 1
-Question 2: Option 1
-Question 3: Option 1
-Question 4: Option 1
-Question 5: Option 1
-Question 6: Option 1
-Question 7: Option 1
-Question 8: Option 1
-Archetype: Colonial Administrator
+Question 1: Option: 4
+Question 2: Option: 3
+Question 3: Option: 4
+Question 4: Option: 2
+Question 5: Option: 3
+Question 6: Option: 5
+Question 7: Option: 4
+Question 8: Option: 3
