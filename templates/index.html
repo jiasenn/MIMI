@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./css/styles.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>MBTI Personality Quiz</title>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Historical Character Archetype Quiz</h1>
+        <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+    
+    <div id="question-container" class="hidden">
+        <div id="question1">
+            <h1>Question 1</h1>
+            <p>Your Question Here?</p>
+            <button onclick="nextQuestion('q1=a')">A</button>
+            <button onclick="nextQuestion('q1=b')">B</button>
+            <button onclick="nextQuestion('q1=c')">C</button>
+            <button onclick="nextQuestion('q1=d')">D</button>
+            <button onclick="nextQuestion('q1=e')">E</button>
+        </div>
+        
+        <div id="question2" class="hidden">
+            <h1>Question 2</h1>
+            <p>Your Question Here?</p>
+            <button onclick="nextQuestion('q2=a')">A</button>
+            <button onclick="nextQuestion('q2=b')">B</button>
+            <button onclick="nextQuestion('q2=c')">C</button>
+            <button onclick="nextQuestion('q2=d')">D</button>
+            <button onclick="nextQuestion('q2=e')">E</button>
+        </div>
+        <!-- Add more questions as needed -->
+        <div id="question3" class="hidden">
+            <h1>Question 3</h1>
+            <p>Your Question Here?</p>
+            <button onclick="nextQuestion('q3=a')">A</button>
+            <button onclick="nextQuestion('q3=b')">B</button>
+            <button onclick="nextQuestion('q3=c')">C</button>
+            <button onclick="nextQuestion('q3=d')">D</button>
+            <button onclick="nextQuestion('q3=e')">E</button>
+        </div>
+        <div id="question4" class="hidden">
+            <h1>Question 4</h1>
+            <p>Your Question Here?</p>
+            <button onclick="nextQuestion('q4=a')">A</button>
+            <button onclick="nextQuestion('q4=b')">B</button>
+            <button onclick="nextQuestion('q4=c')">C</button>
+            <button onclick="nextQuestion('q4=d')">D</button>
+            <button onclick="nextQuestion('q4=e')">E</button>
+        </div>
+        <div id="question5" class="hidden">
+            <h1>Question 5</h1>
+            <p>Your Question Here?</p>
+            <button onclick="nextQuestion('q5=a')">A</button>
+            <button onclick="nextQuestion('q5=b')">B</button>
+            <button onclick="nextQuestion('q5=c')">C</button>
+            <button onclick="nextQuestion('q5=d')">D</button>
+            <button onclick="nextQuestion('q5=e')">E</button>
+        </div>
+        <div id="question6" class="hidden">
+            <h1>Question 6</h1>
+            <p>Your Question Here?</p>
+            <button onclick="nextQuestion('q6=a')">A</button>
+            <button onclick="nextQuestion('q6=b')">B</button>
+            <button onclick="nextQuestion('q6=c')">C</button>
+            <button onclick="nextQuestion('q6=d')">D</button>
+            <button onclick="nextQuestion('q6=e')">E</button>
+        </div>
+        <div id="question7" class="hidden">
+            <h1>Question 7</h1>
+            <p>Your Question Here?</p>
+            <button onclick="nextQuestion('q7=a')">A</button>
+            <button onclick="nextQuestion('q7=b')">B</button>
+            <button onclick="nextQuestion('q7=c')">C</button>
+            <button onclick="nextQuestion('q7=d')">D</button>
+            <button onclick="nextQuestion('q7=e')">E</button>
+        </div>
+        <div id="question8" class="hidden">
+            <h1>Question 8</h1>
+            <p>Your Question Here?</p>
+            <button onclick="nextQuestion('q8=a')">A</button>
+            <button onclick="nextQuestion('q8=b')">B</button>
+            <button onclick="nextQuestion('q8=c')">C</button>
+            <button onclick="nextQuestion('q8=d')">D</button>
+            <button onclick="nextQuestion('q8=e')">E</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='quiz.js') }}"></script>
+    <!-- <script src="./static/quiz.js"></script> -->
+</body>
+</html>
