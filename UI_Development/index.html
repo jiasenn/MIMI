@@ -9,8 +9,35 @@
 </head>
 <body>
     <div class="quiz-container">
-        <h1>Historical Character Archetype Quiz</h1>
-        <button onclick="startQuiz()">Start Quiz</button>
+        <h1>Home</h1>
+        <h2>Exploring the Past</h2>
+        <img class="landing-page-img" src="https://www.belaroundtheworld.com/wp-content/uploads/2017/08/singapore-river-old-vs-new.jpg" alt="Past and present Clarke Quay">
+        <p> Want to know what character archetype <br/>you would have been in the past?</p>
+        <button onclick="startQuiz()">Start your Journey!</button>
+        <div class="Tabbar">
+            <div class="Tabs"> 
+              <div id="home-tab" class="TabbarTab" onclick="window.location.href='index.html';">
+                <img class="HomeIcon" src="/Icons/Home.png" alt="Home" />
+                <img class="activeIcon" src="/Icons/bluehome.png" alt="Blue Explore Icon" style="display: none;"/>
+                <div class="Home">Home</div>
+              </div>
+              <div id="explore-tab" class="TabbarTab" onclick="window.location.href='explore.html';">
+                <img class="ExploreIcon" src="/Icons/Explore.png" alt="Explore"/>
+                <img class="activeIcon" src="/Icons/blueexplore.png" alt="Blue Explore Icon" style="display: none;"/>
+                <div class="Explore">Explore</div>
+              </div>
+              <div id="collection-tab"class="TabbarTab" onclick="window.location.href='collection.html';">
+                <img class="CollectionIcon" src="/Icons/Collection.png" alt="Collection"/>
+                <img class="activeIcon" src="/Icons/bluecollection.png" alt="Blue Explore Icon" style="display: none;"/>
+                <div class="Collection">Collection</div>
+              </div>
+              <div id="profile-tab"class="TabbarTab" onclick="window.location.href='profile.html';">
+                <img class="ProfileIcon" src="/Icons/Profile.png" alt="Profile"/>
+                <img class="activeIcon" src="/Icons/blueprofile.png" alt="Blue Explore Icon" style="display: none;"/>
+                <div class="Profile">Profile</div>
+              </div>
+            </div>
+        </div>
     </div>
     <!-- <form method="POST" action="/result"> -->
         <div id="question-container" class="hidden">
@@ -93,8 +120,10 @@
                 <button onclick="nextQuestion()">Generate Image</button>
             </div>
         </div>
+    
     <!-- </form> -->
     <!-- <script src="{{ url_for('static', filename='quiz.js') }}"></script> -->
     <script src="quiz.js"></script>
+    <script src="icon.js"></script>
 </body>
 </html>

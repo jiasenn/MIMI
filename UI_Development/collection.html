@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> -->
+    <title>Character Archetype Quiz</title>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>My Collection</h1>
+        <p> Collect a collectible by visiting any of the Museums in the Explore Page</p>
+        <button onclick="window.location.href='explore.html';">Start Collecting!</button>
+        <div class="Tabbar">
+            <div class="Tabs"> 
+                <div id="home-tab" class="TabbarTab" onclick="window.location.href='index.html';">
+                  <img class="HomeIcon" src="/Icons/Home.png" alt="Home" />
+                  <img class="activeIcon" src="/Icons/blueexplore.png" alt="Blue Explore Icon" style="display: none;"/>
+                  <div class="Home">Home</div>
+                </div>
+                <div id="explore-tab" class="TabbarTab" onclick="window.location.href='explore.html';">
+                  <img class="ExploreIcon" src="/Icons/Explore.png" alt="Explore"/>
+                  <img class="activeIcon" src="/Icons/blueexplore.png" alt="Blue Explore Icon" style="display: none;"/>
+                  <div class="Explore">Explore</div>
+                </div>
+                <div id="collection-tab"class="TabbarTab" onclick="window.location.href='collection.html';">
+                  <img class="CollectionIcon" src="/Icons/Collection.png" alt="Collection"/>
+                  <img class="activeIcon" src="/Icons/bluecollection.png" alt="Blue Explore Icon" style="display: none;"/>
+                  <div class="Collection">Collection</div>
+                </div>
+                <div id="profile-tab"class="TabbarTab" onclick="window.location.href='profile.html';">
+                  <img class="ProfileIcon" src="/Icons/Profile.png" alt="Profile"/>
+                  <img class="activeIcon" src="/Icons/blueprofile.png" alt="Blue Explore Icon" style="display: none;"/>
+                  <div class="Profile">Profile</div>
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+    <script src="icon.js"></script>
+</body>
+</html>
