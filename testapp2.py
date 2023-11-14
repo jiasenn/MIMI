@@ -16,10 +16,10 @@ llama_debug = LlamaDebugHandler(print_trace_on_end=True)
 callback_manager = CallbackManager([llama_debug])
 
 llm = LlamaCPP(
-    model_url="https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF/resolve/main/llama-2-13b-chat.Q5_K_M.gguf",
+    # model_url="https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF/resolve/main/llama-2-13b-chat.Q5_K_M.gguf",
     
     # optionally, you can set the path to a pre-downloaded model instead of model_url
-    model_path=None,
+    model_path="/Users/jiasenn/Downloads/llama-2-13b-chat.Q5_K_M.gguf",
     
     temperature=0.0,
     max_new_tokens=1024,
@@ -32,7 +32,7 @@ llm = LlamaCPP(
     
     # kwargs to pass to __init__()
     # set to at least 1 to use GPU
-    model_kwargs={"n_gpu_layers": 30}, # I need to play with this and see if it actually helps
+    model_kwargs={"n_gpu_layers": 0}, # I need to play with this and see if it actually helps
     
     # transform inputs into Llama2 format
     messages_to_prompt=messages_to_prompt,
@@ -62,9 +62,13 @@ pipe = StableDiffusionPanoramaPipeline.from_pretrained(
 )
 
 # Move the pipeline to GPU
-pipe = pipe.to("cuda")
+# pipe = pipe.to("cuda")
 
 @app.route('/')
+def home():
+    return render_template('index2.html')
+
+@app.route('/index.html')
 def index():
     return render_template('index2.html')
 
@@ -116,12 +120,21 @@ def display_result():
                 "Please summarize your reasoning into 1 sentences using the following format to summarize: \n" \
                 "<archetype> in location such as <location>."
     
+    a_prompt = "My archetype is?"
+
+    l_prompt = "The location that best represents my archetype is?"
+    
     # print time taken to generate response
     import time
     t_start = time.time()
     start = time.time()
-    description = query_engine.query(img_prompt)
-    description = str(description)
+    # description = query_engine.query(img_prompt)
+    # description = str(description)
+    # archetypes = query_engine.query(a_prompt)
+    # location = query_engine.query(l_prompt)
+
+    archetypes = "The Explorer"
+    location = "Gardens by the Bay"
     end = time.time()
     
     print("Time taken to generate description: ", end - start)
@@ -132,19 +145,36 @@ def display_result():
     # prompt = str(prompt)
     # r_end = time.time()
     # print("Time taken to generate response: ", r_end - r_start)
+    description = "Your archetype is " + archetypes + " because " + location + " is a place where " + archetypes + " can be found."
 
     print("Description: ", description)
+
+    
     # print("Response:", prompt)
 
-    image = pipe(description).images[0]
+    # image = pipe(description).images[0]
     # Save the generated image
-    image.save('static/generatedpanorama.png')
+    # image.save('static/generatedpanorama.png')
     t_end = time.time()
 
     print("Time taken to generate image: ", t_end - t_start)
     # display the quiz answers on the result page
     return render_template('result.html', quiz_answers=description)
     # return render_template('result.html')
+
+@app.route('/explore.html')
+def explore():
+    return render_template('explore.html')
+
+@app.route('/collection.html')
+def collection():
+    return render_template('collection.html')
+
+@app.route('/profile.html')
+def profile():
+    return render_template('profile.html')
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -15,6 +15,8 @@ body {
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    align-content: center;
+    text-align: center;
 }
 
 #question-container {
@@ -29,6 +31,67 @@ body {
 h1 {
     font-size: 36px;
     text-align: center;
+}
+
+.landing-page-img {
+    height:100%;
+    margin-top: 11px;
+    width: 100%;
+}
+
+.singapore-art-museum-img {
+    height:100%;
+    margin-top: 11px;
+    width: 100%;
+}
+
+.Frame1 {
+    width: 100%;
+    height: 100%;
+    position: relative; /* This will allow absolute positioning inside */
+    display: flex; /* This enables flexbox for centering */
+    justify-content: center; /* This centers horizontally */
+    align-items: center; /* This centers vertically */
+}
+
+.Frame2 {
+    width: 100%;
+    height: 100%;
+    position: relative; /* This will allow absolute positioning inside */
+    display: flex; /* This enables flexbox for centering */
+    justify-content: center; /* This centers horizontally */
+    align-items: center; /* This centers vertically */
+}
+  
+.CaptionButton {
+    position: absolute; /* This positions the caption over the image */
+    bottom: 10px; /* Adjust as needed for exact positioning */
+    left: 0;
+    right: 0; /* This combination centers the button */
+    background: rgba(0, 0, 0, 0.50); /* Semi-transparent background */
+    border-radius: 8px;
+    padding: 6px 8px; /* Padding for the text */
+    display: flex; /* This enables flexbox for centering text */
+    justify-content: center; /* This centers the text horizontally */
+    align-items: center; /* This centers the text vertically */
+}
+
+.Label {
+    color: white;
+    font-size: 10px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.20px;
+    word-wrap: break-word;
+    text-align: center; /* Ensure the text is centered within the button */
+}
+  
+
+.national-museum-img {
+    height:100%;
+    margin-top: 11px;
+    width: 100%;
 }
 
 p {
@@ -46,14 +109,14 @@ button {
     padding: 10px;
     font-size: 18px;
     color: #fff;
-    background-color: #5cb85c;
+    background-color: #52B3DD;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #4cae4c;
+    background-color: #74c2d1;
 }
 
 .hidden {
@@ -70,6 +133,102 @@ button:hover {
     border: 1px solid black;
     z-index: 1000;
     text-align: center;
+}
+
+.Tabbar {
+    width:100%;
+    max-width:600px;
+    margin-top: 20px;
+    align-content: center;
+    flex-direction: column; 
+    align-items: center; 
+    display: inline-flex;
+    justify-content: center;
+}
+
+.Tabs {
+    width: 100%; /* Full width to accommodate responsiveness */
+    padding-bottom: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    display: flex; /* Changed to flex for consistency */
+}
+
+.TabbarTab {
+    flex: 1;
+    align-self: stretch;
+    padding-top: 6px;
+    padding-left: 17px; /* Adjust as needed for even spacing */
+    padding-right: 15px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 3.01px;
+    display: inline-flex; /* Or change to 'flex' if appropriate */
+}
+
+.TabbarTab:hover {
+    background-color: #d3d3d3;
+    opacity: 100%;
+}
+
+.TabbarTab .Direction1Active {
+    display: none; /* Hide the active image by default */
+}
+
+.TabbarTab.active .Direction1 {
+    display: none; /* Hide the inactive image when active */
+}
+
+.TabbarTab.active .Direction1Active {
+    display: inline; /* Show the active image when the tab is active */
+}
+
+.HomeIcon,
+.ExploreIcon,
+.CollectionIcon,
+.ProfileIcon {
+    width: 31.99px;
+    height: 31.99px;
+}
+
+.activeIcon{
+    width: 31.99px;
+    height: 31.99px;
+}
+
+/* Initially hide all active icons */
+.TabbarTab img.activeIcon {
+    display: none;
+}
+
+/* Show the active icon when its parent has the 'active' class */
+.TabbarTab.active img.activeIcon {
+    display: block;
+}
+
+/* Hide the default icon when its parent has the 'active' class */
+.TabbarTab.active img:not(.activeIcon) {
+    display: none;
+}
+
+
+.Home,
+.Explore,
+.Collection,
+.Profile {
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+.UserIcon {
+    width: 25%;
+    height:25%;
 }
 
 /* make the quiz questions centered */
