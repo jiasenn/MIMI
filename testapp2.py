@@ -58,7 +58,7 @@ storage_context = StorageContext.from_defaults(persist_dir=storage_directory)
 model_ckpt = "stabilityai/stable-diffusion-2-base"
 scheduler = DDIMScheduler.from_pretrained(model_ckpt, subfolder="scheduler")
 pipe = StableDiffusionPanoramaPipeline.from_pretrained(
-    model_ckpt, scheduler=scheduler, torch_dtype=torch.float16
+    model_ckpt, scheduler=scheduler, torch_dtype=torch.float32
 )
 
 # Move the pipeline to GPU
@@ -66,7 +66,7 @@ pipe = StableDiffusionPanoramaPipeline.from_pretrained(
 
 @app.route('/')
 def home():
-    return render_template('index2.html')
+    return redirect(url_for('index'))
 
 @app.route('/index.html')
 def index():
@@ -153,7 +153,7 @@ def display_result():
     # print("Response:", prompt)
 
     # image = pipe(description).images[0]
-    # Save the generated image
+    # # Save the generated image
     # image.save('static/generatedpanorama.png')
     t_end = time.time()
 
