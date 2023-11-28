@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Character Archetype Quiz</title>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Explore</h1>
+        <h2> Museums of Singapore </h2>
+        <div class="Frame1" onclick="window.open('https://www.marinabaysands.com/museum.html', '_blank');">
+            <img class="singapore-art-museum-img" src="https://www.marinabaysands.com/content/dam/revamp/ASMrevamp/itineraries/2018%20Brand%20Stock%20Image%20ASM%20(9)_Preparing%20for%20your%20visit.jpg" alt="Singapore Art Museum">
+            <div class="CaptionButton">
+              <span class="Label">Art Science Museum</span>
+            </div>
+        </div>
+        <div class="Frame2" onclick="window.open('https://www.nhb.gov.sg/nationalmuseum/', '_blank');">
+            <img class="national-museum-img" src="https://www.visitsingapore.com/content/dam/desktop/global/see-do-singapore/history/national-museum-of-singapore-carousel01-rect.jpeg" alt="National Museum of Singapore">
+            <div class="CaptionButton">
+                <span class="Label">National Museum</span>
+            </div>
+        </div>
+        <div class="Tabbar">
+            <div class="Tabs"> 
+                <div id="home-tab" class="TabbarTab" onclick="window.location.href='index.html';">
+                    <img class="HomeIcon"  src="{{ url_for('static', filename='Icons/Home.png') }}" alt="Home" />
+                    <img class="activeIcon" src="{{ url_for('static', filename='Icons/bluehome.png') }}" alt="Blue Home Icon" style="display: none;"/>
+                    <div class="Home">Home</div>
+                </div>
+                <div id="explore-tab" class="TabbarTab" onclick="window.location.href='explore.html';">
+                    <img class="ExploreIcon" src="{{ url_for('static', filename='Icons/Explore.png') }}" alt="Explore"/>
+                    <img class="activeIcon" src="{{ url_for('static', filename='Icons/blueexplore.png') }}" alt="Blue Explore Icon" style="display: none;"/>
+                    <div class="Explore">Explore</div>
+                </div>
+                <div id="collection-tab"class="TabbarTab" onclick="window.location.href='collection.html';">
+                    <img class="CollectionIcon" src="{{ url_for('static', filename='Icons/Collection.png') }}" alt="Collection"/>
+                    <img class="activeIcon" src="{{ url_for('static', filename='Icons/bluecollection.png') }}" alt="Blue Collection Icon" style="display: none;"/>
+                    <div class="Collection">Collection</div>
+                </div>
+                <div id="profile-tab"class="TabbarTab" onclick="window.location.href='profile.html';">
+                    <img class="ProfileIcon" src="{{ url_for('static', filename='Icons/Profile.png') }}" alt="Profile"/>
+                    <img class="activeIcon" src="{{ url_for('static', filename='Icons/blueprofile.png') }}" alt="Blue Profile Icon" style="display: none;"/>
+                    <div class="Profile">Profile</div>
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+    <!-- <script src="./icon.js"></script> -->
+    <script src="{{ url_for('static', filename='icon.js') }}"></script>
+</body>
+</html>
