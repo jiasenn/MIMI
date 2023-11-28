@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> -->
-    <title>Character Archetype Quiz</title>
+    <title>Historical Character Archetype Quiz</title>
 </head>
 <body>
     <div class="quiz-container">
         <img class="UserIcon" src="/Icons/User.png" alt="User Icon">
         <h1>My Profile</h1>
-        <h2>Name</h2>
         <p>
             My character archetype is...
         </p>
+        <div id="archetypeSection" style="display: none;">
+          <h2>Coolie</h2>
+          <img src="/Icons/coolie.jpg" alt="Coolie">
+        </div>
         <div class="Tabbar">
             <div class="Tabs"> 
                 <div id="home-tab" class="TabbarTab" onclick="window.location.href='index.html';">
@@ -42,5 +45,7 @@
         </div>
     </div>
     <script src="icon.js"></script>
+    <!-- <script src="result.js"></script> -->
+    <script src="profile.js"></script>
 </body>
 </html>

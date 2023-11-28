@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> -->
-    <title>Character Archetype Quiz</title>
+    <title>Historical Character Archetype Quiz</title>
 </head>
 <body>
     <div class="quiz-container">
         <h1>My Collection</h1>
         <p> Collect a collectible by visiting any of the Museums in the Explore Page</p>
-        <button onclick="window.location.href='explore.html';">Start Collecting!</button>
+        <div id="collectionContainer"></div>
+        <button id="addmorecollection" onclick="window.location.href='explore.html';">Visit our VR Popup at these Museums!</button>
         <div class="Tabbar">
             <div class="Tabs"> 
                 <div id="home-tab" class="TabbarTab" onclick="window.location.href='index.html';">
@@ -39,5 +40,7 @@
         </div>
     </div>
     <script src="icon.js"></script>
+    <script src="show_collection.js"></script>
+
 </body>
 </html>
