@@ -5,96 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="./css/styles.css"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <title>MBTI Personality Quiz</title>
+    <title>Historical Character Archetype Quiz</title>
 </head>
 <body>
     <div class="quiz-container">
-        <h1>Historical Character Archetype Quiz</h1>
-        <button onclick="startQuiz()">Start Quiz</button>
+        <h1>Home</h1>
+        <h2>Exploring the Past</h2>
+        <img class="landing-page-img" src="{{ url_for('static', filename='Icons/singapore-river-old-new.jpeg') }}" alt="Past and present Clarke Quay">
+        <p> Want to know what character archetype <br/>you would have been in the past?</p>
+        <button onclick="startQuiz()">Start your Journey!</button>
+        <div class="Tabbar">
+            <div class="Tabs"> 
+              <div id="home-tab" class="TabbarTab" onclick="window.location.href='index.html';">
+                <img class="HomeIcon"  src="{{ url_for('static', filename='Icons/Home.png') }}" alt="Home" />
+                <img class="activeIcon" src="{{ url_for('static', filename='Icons/bluehome.png') }}" alt="Blue Home Icon" style="display: none;"/>
+                <div class="Home">Home</div>
+              </div>
+              <div id="explore-tab" class="TabbarTab" onclick="window.location.href='explore.html';">
+                <img class="ExploreIcon" src="{{ url_for('static', filename='Icons/Explore.png') }}" alt="Explore"/>
+                <img class="activeIcon" src="{{ url_for('static', filename='Icons/blueexplore.png') }}" alt="Blue Explore Icon" style="display: none;"/>
+                <div class="Explore">Explore</div>
+              </div>
+              <div id="collection-tab"class="TabbarTab" onclick="window.location.href='collection.html';">
+                <img class="CollectionIcon" src="{{ url_for('static', filename='Icons/Collection.png') }}" alt="Collection"/>
+                <img class="activeIcon" src="{{ url_for('static', filename='Icons/bluecollection.png') }}" alt="Blue Collectioncon" style="display: none;"/>
+                <div class="Collection">Collection</div>
+              </div>
+              <div id="profile-tab"class="TabbarTab" onclick="window.location.href='profile.html';">
+                <img class="ProfileIcon" src="{{ url_for('static', filename='Icons/Profile.png') }}" alt="Profile"/>
+                <img class="activeIcon" src="{{ url_for('static', filename='Icons/blueprofile.png') }}" alt="Blue Profile Icon" style="display: none;"/>
+                <div class="Profile">Profile</div>
+              </div>
+            </div>
+        </div>
     </div>
-    <!-- <form method="POST" action="/result"> -->
         <div id="question-container" class="hidden">
             <div id="question1">
                 <h1>Question 1</h1>
-                <p>Morning Routine: How do you start your day in CityScape?</p>
-                <button onclick="nextQuestion('q1=1')">Checking news and updates for the city.</button>
-                <button onclick="nextQuestion('q1=2')">Heading straight to work, no time to lose.</button>
-                <button onclick="nextQuestion('q1=3')">Taking care of family or neighbors.</button>
-                <button onclick="nextQuestion('q1=4')">Visiting a community garden or local park.</button>
-                <button onclick="nextQuestion('q1=5')">Participating in a community rally or cause.</button>
+                <p>You discover an uncharted island. Your first action is to:</p>
+                <button onclick="nextQuestion('q1=1')">Chart the terrain and plan the capital city.</button>
+                <button onclick="nextQuestion('q1=2')">Search for natural resources and establish a base.</button>
+                <button onclick="nextQuestion('q1=3')">Gather local flora for medicinal purposes.</button>
+                <button onclick="nextQuestion('q1=4')">Set up a marketplace for future trade.</button>
             </div>
             
             <div id="question2" class="hidden">
                 <h1>Question 2</h1>
-                <p>Preferred Transport: How do you move around CityScape?</p>
-                <button onclick="nextQuestion('q2=1')">Chauffeured car or private cab.</button>
-                <button onclick="nextQuestion('q2=2')">Public transport, mingling with the crowds.</button>
-                <button onclick="nextQuestion('q2=3')">Walking, while helping others along the way.</button>
-                <button onclick="nextQuestion('q2=4')">Bicycle or eco-friendly options.</button>
-                <button onclick="nextQuestion('q2=5')">Organizing carpools or group rides.</button>
+                <p>You're leading an expedition in ancient lands. You:</p>
+                <button onclick="nextQuestion('q2=1')">Negotiate with local tribes for guidance.</button>
+                <button onclick="nextQuestion('q2=2')">Lead the labor to build a bridge over a treacherous river.</button>
+                <button onclick="nextQuestion('q2=3')">Teach the team survival skills based on indigenous traditions.</button>
+                <button onclick="nextQuestion('q2=4')">Barter with explorers for rare artifacts.</button>
             </div>
             <!-- Add more questions as needed -->
             <div id="question3" class="hidden">
                 <h1>Question 3</h1>
-                <p>City Event: Which event are you most likely to attend?</p>
-                <button onclick="nextQuestion('q3=1')">A leadership summit or conference.</button>
-                <button onclick="nextQuestion('q3=2')">A cultural festival celebrating heritage.</button>
-                <button onclick="nextQuestion('q3=3')">A community mentorship program.</button>
-                <button onclick="nextQuestion('q3=4')">A trade fair or business expo.</button>
-                <button onclick="nextQuestion('q3=5')">An educational seminar or workshop.</button>
+                <p>During a siege, you:</p>
+                <button onclick="nextQuestion('q3=1')">Devise a cunning plan to outwit the enemy.</button>
+                <button onclick="nextQuestion('q3=2')">Fortify the defenses and inspire the workers.</button>
+                <button onclick="nextQuestion('q3=3')">Sneak messages to allies using coded folk songs.</button>
+                <button onclick="nextQuestion('q3=4')">Use your hidden caches to supply the defenders.</button>
             </div>
             <div id="question4" class="hidden">
                 <h1>Question 4</h1>
-                <p>Weekend Activity: How do you spend your weekends in CityScape?</p>
-                <button onclick="nextQuestion('q4=1')">Planning for the city's growth and development.</button>
-                <button onclick="nextQuestion('q4=2')">Exploring cultural districts and traditions.</button>
-                <button onclick="nextQuestion('q4=3')">Organizing or attending community meetings.</button>
-                <button onclick="nextQuestion('q4=4')">Checking out new business opportunities.</button>
-                <button onclick="nextQuestion('q4=5')">Volunteering or teaching.</button>
+                <p>You find a time machine. You go to:</p>
+                <button onclick="nextQuestion('q4=1')">The signing of a nation's first constitution.</button>
+                <button onclick="nextQuestion('q4=2')">The construction of the great pyramids.</button>
+                <button onclick="nextQuestion('q4=3')">The first settlement of your ancestors.</button>
+                <button onclick="nextQuestion('q4=4')">The golden age of the Silk Road.</button>
             </div>
             <div id="question5" class="hidden">
                 <h1>Question 5</h1>
-                <p>Night Out: Your idea of a perfect night out in CityScape?</p>
-                <button onclick="nextQuestion('q5=1')">An elite gathering or gala.</button>
-                <button onclick="nextQuestion('q5=2')">A vibrant street food market.</button>
-                <button onclick="nextQuestion('q5=3')">A family or community dinner.</button>
-                <button onclick="nextQuestion('q5=4')">A lakeside picnic or nature walk.</button>
-                <button onclick="nextQuestion('q5=5')">Attending a social activism event.</button>
+                <p>You must cross a mythical desert. You take:</p>
+                <button onclick="nextQuestion('q5=1')">An ancient map with hidden symbols.</button>
+                <button onclick="nextQuestion('q5=2')">A hardy camel that knows instinctively where to find water.</button>
+                <button onclick="nextQuestion('q5=3')">A compass passed down through generations.</button>
+                <button onclick="nextQuestion('q5=4')">A chest of trade goods to exchange with caravans.</button>
             </div>
             <div id="question6" class="hidden">
                 <h1>Question 6</h1>
-                <p>City Issue: CityScape faces a challenge. How do you tackle it?</p>
-                <button onclick="nextQuestion('q6=1')">Gather leaders and strategize.</button>
-                <button onclick="nextQuestion('q6=2')">Collaborate with communities for solutions.</button>
-                <button onclick="nextQuestion('q6=3')">Offer guidance and wisdom to those affected.</button>
-                <button onclick="nextQuestion('q6=4')">Invest resources and find economic solutions.</button>
-                <button onclick="nextQuestion('q6=5')">Educate the public on the issue.</button>
+                <p>You're offered a choice of legendary tools. You choose:</p>
+                <button onclick="nextQuestion('q6=1')">A pen that records thoughts onto parchment.</button>
+                <button onclick="nextQuestion('q6=2')">A hammer that can build anything you envision.</button>
+                <button onclick="nextQuestion('q6=3')">A horn that summons the community in times of need.</button>
+                <button onclick="nextQuestion('q6=4')">Scales that can weigh the value of any item perfectly.</button>
             </div>
             <div id="question7" class="hidden">
                 <h1>Question 7</h1>
-                <p>Vacation Spot: Where would you unwind outside CityScape?</p>
-                <button onclick="nextQuestion('q7=1')">A luxurious retreat.</button>
-                <button onclick="nextQuestion('q7=2')">A backpacking adventure.</button>
-                <button onclick="nextQuestion('q7=3')">A family-friendly resort.</button>
-                <button onclick="nextQuestion('q7=4')">A nature-based getaway.</button>
-                <button onclick="nextQuestion('q7=5')">A historical or educational tour.</button>
+                <p>In a mystical bazaar, you are drawn to:</p>
+                <button onclick="nextQuestion('q7=1')">A scroll that details the governance of lost civilizations.</button>
+                <button onclick="nextQuestion('q7=2')">Robes that are said to protect the wearer from all toils.</button>
+                <button onclick="nextQuestion('q7=3')">A lantern that lights the way to hidden treasures.</button>
+                <button onclick="nextQuestion('q7=4')">A compass that always points towards the most profitable venture.</button>
             </div>
             <div id="question8" class="hidden">
                 <h1>Question 8</h1>
-                <p>City Legacy: What do you wish to contribute to CityScape?</p>
-                <button onclick="nextQuestion('q8=1')">Visionary leadership and governance.</button>
-                <button onclick="nextQuestion('q8=2')">Preservation of culture and traditions.</button>
-                <button onclick="nextQuestion('q8=3')">Community bonding and mentorship.</button>
-                <button onclick="nextQuestion('q8=4')">Economic growth and business opportunities.</button>
-                <button onclick="nextQuestion('q8=5')">Knowledge and education for all.</button>
+                <p>If you could pick a mythical creature as your companion, it would be:</p>
+                <button onclick="nextQuestion('q8=1')">A phoenix, to inspire rebirth and transformation in society.</button>
+                <button onclick="nextQuestion('q8=2')">A sturdy golem, to assist in laborious tasks.</button>
+                <button onclick="nextQuestion('q8=3')">A wise old dragon, to offer counsel and protection.</button>
+                <button onclick="nextQuestion('q8=4')">A shape-shifter, to adapt to the ever-changing tides of commerce.</button>
             </div>
             <div id="question9" class="hidden">
                 <!-- button to generate image -->
+                <h1>Final Step:</h1>
+                <h2>Generate your Personalised Image</h2>
+                <!-- <button onclick="window.location.href='result.html';">Generate Image</button> -->
                 <button onclick="nextQuestion()">Generate Image</button>
             </div>
         </div>
     <!-- </form> -->
     <script src="{{ url_for('static', filename='quiz.js') }}"></script>
-    <!-- <script src="./static/quiz.js"></script> -->
+    <script src="{{ url_for('static', filename='icon.js') }}"></script>
 </body>
 </html>

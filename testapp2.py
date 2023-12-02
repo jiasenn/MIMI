@@ -58,7 +58,7 @@ storage_context = StorageContext.from_defaults(persist_dir=storage_directory)
 model_ckpt = "stabilityai/stable-diffusion-2-base"
 scheduler = DDIMScheduler.from_pretrained(model_ckpt, subfolder="scheduler")
 pipe = StableDiffusionPanoramaPipeline.from_pretrained(
-    model_ckpt, scheduler=scheduler, torch_dtype=torch.float32
+    model_ckpt, scheduler=scheduler, torch_dtype=torch.float16, circular_padding=True
 )
 
 # Move the pipeline to GPU
@@ -84,22 +84,50 @@ def receive_data():
     # split the query parameter into a list of strings
     data = data.split('&')
     quiz_answers = ""
+    archetype_count = [0, 0, 0, 0]
+    archetype_lst = ["The Colonial Administrator", "Samsui Women", "Fisherman", "Tradesman"]
 
     for qn in range(len(data) - 2):
         quiz_answers = quiz_answers + "Question " + str(qn+1) + ": Option: " + data[qn][-1] + "\n"
+        print(type(data[qn][-1]))
+        if data[qn][-1] == "1":
+            print("hello")
+            archetype_count[0] += 1 
+            # archetype["The Colonial Administrator"] += 1
+        elif data[qn][-1] == "2":
+            # archetype["Samsui Women"] += 1
+            archetype_count[1] += 1 
+        elif data[qn][-1] == "3":
+            # archetype["Fisherman"] += 1
+            archetype_count[2] += 1 
+        elif data[qn][-1] == "4":
+            archetype_count[3] += 1 
+            # archetype["Tradesman"] += 1        
+    
+    print(archetype_count)
+    global result_archetype
+    result_archetype = archetype_lst[archetype_count.index(max(archetype_count))]
         
     # save quiz_answers to a file
     with open('testdata/choices2.txt', 'w') as f:
         f.write(quiz_answers)
+    with open('testdata/archetype.txt', 'w') as f:
+        f.write(result_archetype)
     print("Successfully saved quiz answers to file")
     # return the data as a JSON response
     return jsonify(response_data)
+
     
 
 @app.route('/result', methods=['GET'])
 def display_result():
-    with open('testdata/choices2.txt', 'r') as f:
-        answers_lst = f.readlines()
+    # with open('testdata/choices2.txt', 'r') as f:
+    #     answers_lst = f.readlines()
+
+    with open('testdata/archetype.txt', 'r') as f:
+        archetype = f.read()
+    
+    print(result_archetype)
 
     index = VectorStoreIndex.from_documents(documents, service_context=service_context)
     # Persist the index to disk
@@ -133,7 +161,7 @@ def display_result():
     # archetypes = query_engine.query(a_prompt)
     # location = query_engine.query(l_prompt)
 
-    archetypes = "The Explorer"
+    # archetypes = "The Explorer"
     location = "Gardens by the Bay"
     end = time.time()
     
@@ -145,7 +173,7 @@ def display_result():
     # prompt = str(prompt)
     # r_end = time.time()
     # print("Time taken to generate response: ", r_end - r_start)
-    description = "Your archetype is " + archetypes + " because " + location + " is a place where " + archetypes + " can be found."
+    description = "Your archetype is " + result_archetype + " because " + location + " is a place where " + result_archetype + " can be found."
 
     print("Description: ", description)
 

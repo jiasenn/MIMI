@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <title>Character Archetype Quiz</title>
+    <title>Historical Character Archetype Quiz</title>
 </head>
 <body>
     <div class="quiz-container">
         <h1>Explore</h1>
         <h2> Museums of Singapore </h2>
+        <p>Find our more about (placeholder) here:</p>
         <div class="Frame1" onclick="window.open('https://www.marinabaysands.com/museum.html', '_blank');">
-            <img class="singapore-art-museum-img" src="https://www.marinabaysands.com/content/dam/revamp/ASMrevamp/itineraries/2018%20Brand%20Stock%20Image%20ASM%20(9)_Preparing%20for%20your%20visit.jpg" alt="Singapore Art Museum">
+            <img class="acm-img" src="{{ url_for('static', filename='Icons/acm-img.webp') }}" alt="Asian Civilisations Museum">
             <div class="CaptionButton">
-              <span class="Label">Art Science Museum</span>
+              <span class="Label">Asian Civilisations Museums</span>
             </div>
         </div>
         <div class="Frame2" onclick="window.open('https://www.nhb.gov.sg/nationalmuseum/', '_blank');">
-            <img class="national-museum-img" src="https://www.visitsingapore.com/content/dam/desktop/global/see-do-singapore/history/national-museum-of-singapore-carousel01-rect.jpeg" alt="National Museum of Singapore">
+            <img class="national-museum-img" src="{{ url_for('static', filename='Icons/national-museum-img.jpeg') }}" alt="National Museum of Singapore">
             <div class="CaptionButton">
                 <span class="Label">National Museum</span>
             </div>

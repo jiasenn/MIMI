@@ -6,7 +6,7 @@ from diffusers import StableDiffusionPanoramaPipeline, DDIMScheduler
 model_ckpt = "stabilityai/stable-diffusion-2-base"
 scheduler = DDIMScheduler.from_pretrained(model_ckpt, subfolder="scheduler")
 pipe = StableDiffusionPanoramaPipeline.from_pretrained(
-    model_ckpt, scheduler=scheduler, torch_dtype=torch.float16
+    model_ckpt, scheduler=scheduler, torch_dtype=torch.float16, circular_padding=True
 )
 
 # Move the pipeline to GPU
@@ -16,13 +16,13 @@ prompt = input("Enter Your Image Prompt: ")
 
 image = pipe(prompt).images[0]
 
-image.save('static/generatedpanorama.png')
+image.save('static/Icons/generatedpanorama.jpg')
 
 # show image
 from PIL import Image
 
 #read the image
-im = Image.open("static/generatedpanorama.png")
+im = Image.open("static/generatedpanorama.jpg")
 
 #show image
 im.show()
