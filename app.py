@@ -15,34 +15,34 @@ app = Flask(__name__)
 llama_debug = LlamaDebugHandler(print_trace_on_end=True)
 callback_manager = CallbackManager([llama_debug])
 
-# llm = LlamaCPP(
-#     model_url="https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF/resolve/main/llama-2-13b-chat.Q5_K_M.gguf",
+llm = LlamaCPP(
+    model_url="https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF/resolve/main/llama-2-13b-chat.Q5_K_M.gguf",
     
-#     # optionally, you can set the path to a pre-downloaded model instead of model_url
-#     # model_path="/Users/jiasenn/Downloads/llama-2-13b-chat.Q5_K_M.gguf",
+    # optionally, you can set the path to a pre-downloaded model instead of model_url
+    # model_path="/Users/jiasenn/Downloads/llama-2-13b-chat.Q5_K_M.gguf",
     
-#     temperature=0.0,
-#     max_new_tokens=1024,
+    temperature=0.0,
+    max_new_tokens=1024,
     
-#     # llama2 has a context window of 4096 tokens, but we set it lower to allow for some wiggle room
-#     context_window=3900,  # note, this sets n_ctx in the model_kwargs below, so you don't need to pass it there.
+    # llama2 has a context window of 4096 tokens, but we set it lower to allow for some wiggle room
+    context_window=3900,  # note, this sets n_ctx in the model_kwargs below, so you don't need to pass it there.
     
-#     # kwargs to pass to __call__()
-#     generate_kwargs={},
+    # kwargs to pass to __call__()
+    generate_kwargs={},
     
-#     # kwargs to pass to __init__()
-#     # set to at least 1 to use GPU
-#     # model_kwargs={"n_gpu_layers": 1}, # I need to play with this and see if it actually helps
+    # kwargs to pass to __init__()
+    # set to at least 1 to use GPU
+    model_kwargs={"n_gpu_layers": 1}, # I need to play with this and see if it actually helps
     
-#     # transform inputs into Llama2 format
-#     messages_to_prompt=messages_to_prompt,
-#     completion_to_prompt=completion_to_prompt,
-#     verbose=True,
-# )
+    # transform inputs into Llama2 format
+    messages_to_prompt=messages_to_prompt,
+    completion_to_prompt=completion_to_prompt,
+    verbose=True,
+)
 
-# # Create an index of your documents
-# from llama_index import VectorStoreIndex, SimpleDirectoryReader, ServiceContext, StorageContext, load_index_from_storage
-# import os
+# Create an index of your documents
+from llama_index import VectorStoreIndex, SimpleDirectoryReader, ServiceContext, StorageContext, load_index_from_storage
+import os
 
 # storage_directory = "./storage"
 
@@ -54,22 +54,26 @@ callback_manager = CallbackManager([llama_debug])
 
 # storage_context = StorageContext.from_defaults(persist_dir=storage_directory)
 
-# # Load the pre-trained model and initialize the pipeline (as you did in your code)
-# model_ckpt = "stabilityai/stable-diffusion-2-base"
-# scheduler = DDIMScheduler.from_pretrained(model_ckpt, subfolder="scheduler")
-# pipe = StableDiffusionPanoramaPipeline.from_pretrained(
-#     model_ckpt, scheduler=scheduler, torch_dtype=torch.float16, circular_padding=True
-# )
+# Load the pre-trained model and initialize the pipeline (as you did in your code)
+model_ckpt = "stabilityai/stable-diffusion-2-base"
+scheduler = DDIMScheduler.from_pretrained(model_ckpt, subfolder="scheduler")
+pipe = StableDiffusionPanoramaPipeline.from_pretrained(
+    model_ckpt, scheduler=scheduler, torch_dtype=torch.float16
+)
+
+pipe.circular_padding = True
+
+
 
 # from diffusers import DiffusionPipeline
 # pipe = DiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5", use_safetensors=False)
 
-# from diffusers import StableDiffusionPipeline
+# from diffusers import StableDiffusionPipelinez
 # pipe = DiffusionPipeline.from_pretrained("/home/users/jiasen_chen/scratch/model/more_details.safetensors",torch_dtype=torch.float16,use_safetensors=True)
 
 
 # Move the pipeline to GPU
-# pipe = pipe.to("cuda")
+pipe = pipe.to("cuda")
 
 
 @app.route('/')
@@ -93,13 +97,13 @@ def receive_data():
     data = data.split('&')
     quiz_answers = ""
     archetype_count = [0, 0, 0, 0]
-    archetype_lst = ["The Colonial Administrator", "Samsui Women", "Fisherman", "Tradesman"]
+    archetype_lst = ["The Tradesman", "The Fisherman", "The Samsui Woman", "The Coolie"]
 
     for qn in range(len(data) - 2):
         quiz_answers = quiz_answers + "Question " + str(qn+1) + ": Option: " + data[qn][-1] + "\n"
         # print(type(data[qn][-1]))
         if data[qn][-1] == "1":
-            print("hello")
+            # print("hello")
             archetype_count[0] += 1 
             # archetype["The Colonial Administrator"] += 1
         elif data[qn][-1] == "2":
@@ -131,17 +135,22 @@ def receive_data():
 def display_result():
     # with open('testdata/choices2.txt', 'r') as f:
     #     answers_lst = f.readlines()
-    with open('testdata/archetype.txt', 'r') as f:
-        result_archetype = f.read()
     
-    print(result_archetype)
+    storage_directory = "./storage"
 
+    documents = SimpleDirectoryReader('./testdata').load_data()
 
-    # index = VectorStoreIndex.from_documents(documents, service_context=service_context)
-    # # Persist the index to disk
-    # index.storage_context.persist(persist_dir=storage_directory)
-    # query_engine = index.as_query_engine(service_context=service_context,
-    #                                     similarity_top_k=3)
+    service_context = ServiceContext.from_defaults(llm=llm, chunk_size=1024,
+                                                    embed_model="local",
+                                                    callback_manager=callback_manager)
+
+    # storage_context = StorageContext.from_defaults(persist_dir=storage_directory)
+
+    index = VectorStoreIndex.from_documents(documents, service_context=service_context)
+    # Persist the index to disk
+    index.storage_context.persist(persist_dir=storage_directory)
+    query_engine = index.as_query_engine(service_context=service_context,
+                                        similarity_top_k=3)
 
     query = "Given the quiz from quiz2.txt and the results from choices2.txt describe my personality and the archetype from the information in all the files provided. \n" \
             "Personality should not be an archetype. \n" \
@@ -156,7 +165,15 @@ def display_result():
                 "Please summarize your reasoning into 1 sentences using the following format to summarize: \n" \
                 "<archetype> in location such as <location>."
     
-    a_prompt = "My archetype is?"
+    a_prompt = "My archetype is? \n" \
+                "Choose one of the following: \n" \
+                "The Tradesman \n" \
+                "The Fisherman \n" \
+                "The Samsui Woman \n" \
+                "The Coolie"
+
+    
+
 
     l_prompt = "The location that best represents my archetype is?"
     
@@ -166,11 +183,18 @@ def display_result():
     start = time.time()
     # description = query_engine.query(img_prompt)
     # description = str(description)
-    # archetypes = query_engine.query(a_prompt)
+    # result_archetype = query_engine.query(a_prompt)
+    # result_archetype = str(result_archetype)
     # location = query_engine.query(l_prompt)
 
     # archetypes = "The Explorer"
-    location = "Fort Canning Park"
+    locations = ["The Sun Yat-Sen Memorial Hall", "Fort Canning Park", "The National Museum of Singapore", "The National Gallery Singapore", "The Singapore Art Museum", "The Asian Civilisations Museum", "The Peranakan Museum", "Raffles Hotel", "Chinatown", "Civilian War Memorial"]
+    # location = "Fort Canning Park"
+    # randomly choose 1 location from the list of locations
+    import random
+    location = str(random.choice(locations))
+    # print("Archetype: ", result_archetype)
+    print("Location: ", location)
     end = time.time()
     
     print("Time taken to generate description: ", end - start)
@@ -181,17 +205,25 @@ def display_result():
     # prompt = str(prompt)
     # r_end = time.time()
     # print("Time taken to generate response: ", r_end - r_start)
-    prompt = result_archetype + " in " + location + ",Singapore, 1980s."
-    description = "Your archetype is " + result_archetype + " because " + location + " is a place where " + result_archetype + " can be found."
+    with open('testdata/archetype.txt', 'r') as f:
+        result_archetype = f.read()
+    
+    result_archetype = str(result_archetype)
+    print(result_archetype)
+    prompt = result_archetype + " in " + location + ",Singapore, 1980s. 360 Image."
+    # description = "Your archetype is " + result_archetype + " because " + location + " is a place where " + result_archetype + " can be found."
+    description = query_engine.query(query)
+    description = str(description)
 
+    print("Archetype: ", result_archetype)
     print("Description: ", description)
 
     
     # print("Response:", prompt)
 
-    # image = pipe(prompt).images[0]
+    image = pipe(prompt).images[0]
     # Save the generated image
-    # image.save('static/Icons/generatedpanorama.jpg')
+    image.save('static/Icons/generatedpanorama.jpg')
     t_end = time.time()
 
     print("Time taken to generate image: ", t_end - t_start)

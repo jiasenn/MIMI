@@ -261,6 +261,6 @@ button:hover {
 .archetype_result {
     height: auto; 
     width: 50%; 
-    max-width: 300px; 
+    max-width: 200px; 
 }
 /* make the quiz questions centered */

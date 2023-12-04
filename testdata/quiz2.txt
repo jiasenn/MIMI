@@ -1,57 +1,74 @@
-Historical Archetype Adventure Quiz
+### Quiz: "Journey Through Singapore's Future-Past"
 
-Question 1: You discover an uncharted island. Your first action is to:
-- 1. Chart the terrain and plan the capital city.
-- 2. Search for natural resources and establish a base.
-- 3. Gather local flora for medicinal purposes.
-- 4. Set up a marketplace for future trade.
+#### Introduction
+Embark on an adventure through a Singapore of tomorrow, where each choice helps uncover your link to a cherished part of Singapore's heritage.
 
-Question 2: You're leading an expedition in ancient lands. You:
-- 1. Negotiate with local tribes for guidance.
-- 2. Lead the labor to build a bridge over a treacherous river.
-- 3. Teach the team survival skills based on indigenous traditions.
-- 4. Barter with explorers for rare artifacts.
+#### Question 1: The Welcoming Gateway
+- Scenario: You arrive at a bright gateway leading to different paths. Which one feels like your way?
+  1. A path with flashy signs and exciting sounds, like a busy shopping district.
+  2. A quiet walkway with plants and soft lighting, like a peaceful park.
+  3. A bustling path with sounds of work and laughter, like a lively construction site.
+  4. A street filled with music and colorful decorations, like a festive market.
 
-Question 3: During a siege, you:
-- 1. Devise a cunning plan to outwit the enemy.
-- 2. Fortify the defenses and inspire the workers.
-- 3. Sneak messages to allies using coded folk songs.
-- 4. Use your hidden caches to supply the defenders.
+#### Question 2: The Surprise Discovery
+- Scenario: Exploring a small alley, you find something interesting. What catches your eye?
+  1. A cool, shiny gadget that looks like it's from a sci-fi show.
+  2. A handmade wooden trinket that reminds you of a kampung house.
+  3. A pair of sturdy gloves, like those seen on workers at a building site.
+  4. An old, patched bag with many stories to tell, like those at the National Museum.
 
-Question 4: You find a time machine. You go to:
-- 1. The signing of a nation's first constitution.
-- 2. The construction of the great pyramids.
-- 3. The first settlement of your ancestors.
-- 4. The golden age of the Silk Road.
+#### Question 3: The Big Decision
+- Scenario: A screen pops up asking you to make an important choice for the city. What do you pick?
+  1. Starting a new business that uses the latest tech.
+  2. Saving a beautiful, old tree that's been around for ages.
+  3. Helping fix up a well-known landmark that's seen better days.
+  4. Setting up a show that tells stories from different parts of Singapore.
 
-Question 5: You must cross a mythical desert. You take:
-- 1. An ancient map with hidden symbols.
-- 2. A hardy camel that knows instinctively where to find water.
-- 3. A compass passed down through generations.
-- 4. A chest of trade goods to exchange with caravans.
+#### Question 4: The Chance Meeting
+- Scenario: On a lively street, you bump into a group of historical characters. Who do you talk to?
+  1. A smart-looking person with big ideas for business.
+  2. A friendly face who knows all about plants and nature.
+  3. Someone wearing a hard hat, ready to build something great.
+  4. A storyteller, eager to share tales of Singapore's many cultures.
 
-Question 6: You're offered a choice of legendary tools. You choose:
-- 1. A pen that records thoughts onto parchment.
-- 2. A hammer that can build anything you envision.
-- 3. A horn that summons the community in times of need.
-- 4. Scales that can weigh the value of any item perfectly.
+#### Question 5: The Special Feast
+- Scenario: You're at a big dinner with all sorts of food. What do you try first?
+  1. A dish that looks like it's straight out of a futuristic movie.
+  2. A comforting, homemade meal like your grandparents might cook.
+  3. A filling, no-frills dish, the kind that fuels a long day's work.
+  4. A plate full of flavors from all over, like at a hawker centre.
 
-Question 7: In a mystical bazaar, you are drawn to:
-- 1. A scroll that details the governance of lost civilizations.
-- 2. Robes that are said to protect the wearer from all toils.
-- 3. A lantern that lights the way to hidden treasures.
-- 4. A compass that always points towards the most profitable venture.
+#### Question 6: The Whispering Gallery
+- Scenario: In a place filled with sounds and images, one display calls out to you. Which story do you explore?
+  1. A lively scene of traders and shoppers, like in Chinatown.
+  2. A quiet corner of Singapore, filled with greenery and bird calls.
+  3. A busy building site, buzzing with energy and teamwork.
+  4. A collage of pictures and voices from many different neighborhoods.
 
-Question 8: If you could pick a mythical creature as your companion, it would be:
-- 1. A phoenix, to inspire rebirth and transformation in society.
-- 2. A sturdy golem, to assist in laborious tasks.
-- 3. A wise old dragon, to offer counsel and protection.
-- 4. A shape-shifter, to adapt to the ever-changing tides of commerce.
+#### Question 7: The Lasting Message
+- Scenario: Before leaving, you write a note for those who'll come after. What do you say?
+  1. "Always be ready for new ideas and chances."
+  2. "Remember the stories and beauty of our past."
+  3. "Work hard together and make big things happen."
+  4. "Celebrate the mix of people and places that make us who we are."
 
-### Archetype Results:
-- Mostly 1's: You're akin to The Colonial Administrator or The Pioneer Politician; your choices show a flair for leadership and strategy.
-- Mostly 2's: You embody The Coolie/Immigrant Labourer or The Samsui Woman; your adventurous spirit is marked by resilience and creation.
-- Mostly 3's: Your path aligns with The Kampong Leader or The Fisherman/Villager; you value community, tradition, and the wisdom of the natural world.
-- Mostly 4's: You share the spirit of The Tradesman/Merchant, The Straits Chinese, or The Educator; your adventures are driven by commerce, cultural exchanges, and the pursuit of knowledge.
+### Results Interpretation
 
-This version of the quiz is designed to intrigue and entertain, while also linking the participant’s responses to Singapore’s historical figures in a more vivid and engaging way.
+#### If Most Choices Were Option 1:
+- Archetype: The Tradesman/Merchant
+- Description: Your selections suggest you have a knack for innovation and an interest in the bustling world of business and technology. You are forward-thinking, much like the visionary traders and merchants who played a key role in Singapore's history.
+
+#### If Most Choices Were Option 2:
+- Archetype: The Fisherman/Villager
+- Description: Your choices reflect a deep appreciation for nature, tranquility, and the simpler things in life. This mirrors the spirit of the fishermen and villagers, who were closely tied to the natural beauty and serenity of early Singapore.
+
+#### If Most Choices Were Option 3:
+- Archetype: The Samsui Woman
+- Description: You resonate with the qualities of hard work, dedication, and community spirit, similar to the Samsui women. These qualities were essential in shaping Singapore's development, reflecting a strong commitment to collective progress.
+
+#### If Most Choices Were Option 4:
+- Archetype: The Coolie/Immigrant Labourer
+- Description: Your choices show a celebration of cultural diversity and a recognition of the struggles and stories of the past. This aligns with the experiences of the coolies and immigrant laborers, who contributed immensely to the multicultural tapestry of Singapore.
+
+### Conclusion
+These results offer insight into your connection with Singapore's historical legacies, showcasing how the enduring qualities of past generations resonate with your personal preferences and values today.

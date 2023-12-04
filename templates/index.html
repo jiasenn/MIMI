@@ -10,7 +10,7 @@
 <body>
     <div class="quiz-container">
         <h1>Home</h1>
-        <h2>Exploring the Past</h2>
+        <h2>Connect to the Past</h2>
         <img class="landing-page-img" src="{{ url_for('static', filename='Icons/singapore-river-old-new.jpeg') }}" alt="Past and present Clarke Quay">
         <p> Want to know what character archetype <br/>you would have been in the past?</p>
         <button onclick="startQuiz()">Start your Journey!</button>
@@ -42,71 +42,63 @@
         <div id="question-container" class="hidden">
             <div id="question1">
                 <h1>Question 1</h1>
-                <p>You discover an uncharted island. Your first action is to:</p>
-                <button onclick="nextQuestion('q1=1')">Chart the terrain and plan the capital city.</button>
-                <button onclick="nextQuestion('q1=2')">Search for natural resources and establish a base.</button>
-                <button onclick="nextQuestion('q1=3')">Gather local flora for medicinal purposes.</button>
-                <button onclick="nextQuestion('q1=4')">Set up a marketplace for future trade.</button>
+                <p>Scenario: You arrive at a bright gateway leading to different paths. Which one feels like your way?</p>
+                <button onclick="nextQuestion('q1=1')">A path with flashy signs and exciting sounds, like a busy shopping district.</button>
+                <button onclick="nextQuestion('q1=2')">A quiet walkway with plants and soft lighting, like a peaceful park.</button>
+                <button onclick="nextQuestion('q1=3')">A bustling path with sounds of work and laughter, like a lively construction site.</button>
+                <button onclick="nextQuestion('q1=4')">A street filled with music and colorful decorations, like a festive market.</button>
             </div>
             
             <div id="question2" class="hidden">
                 <h1>Question 2</h1>
-                <p>You're leading an expedition in ancient lands. You:</p>
-                <button onclick="nextQuestion('q2=1')">Negotiate with local tribes for guidance.</button>
-                <button onclick="nextQuestion('q2=2')">Lead the labor to build a bridge over a treacherous river.</button>
-                <button onclick="nextQuestion('q2=3')">Teach the team survival skills based on indigenous traditions.</button>
-                <button onclick="nextQuestion('q2=4')">Barter with explorers for rare artifacts.</button>
+                <p>Scenario: Exploring a small alley, you find something interesting. What catches your eye?</p>
+                <button onclick="nextQuestion('q2=1')">A cool, shiny gadget that looks like it's from a sci-fi show.</button>
+                <button onclick="nextQuestion('q2=2')">A handmade wooden trinket that reminds you of a kampung house.</button>
+                <button onclick="nextQuestion('q2=3')">A pair of sturdy gloves, like those seen on workers at a building site.</button>
+                <button onclick="nextQuestion('q2=4')">An old, patched bag with many stories to tell, like those at the National Museum.</button>
             </div>
             <!-- Add more questions as needed -->
             <div id="question3" class="hidden">
                 <h1>Question 3</h1>
-                <p>During a siege, you:</p>
-                <button onclick="nextQuestion('q3=1')">Devise a cunning plan to outwit the enemy.</button>
-                <button onclick="nextQuestion('q3=2')">Fortify the defenses and inspire the workers.</button>
-                <button onclick="nextQuestion('q3=3')">Sneak messages to allies using coded folk songs.</button>
-                <button onclick="nextQuestion('q3=4')">Use your hidden caches to supply the defenders.</button>
+                <p>Scenario: A screen pops up asking you to make an important choice for the city. What do you pick?</p>
+                <button onclick="nextQuestion('q3=1')">Starting a new business that uses the latest tech.</button>
+                <button onclick="nextQuestion('q3=2')">Saving a beautiful, old tree that's been around for ages.</button>
+                <button onclick="nextQuestion('q3=3')">Helping fix up a well-known landmark that's seen better days.</button>
+                <button onclick="nextQuestion('q3=4')">Setting up a show that tells stories from different parts of Singapore.</button>
             </div>
             <div id="question4" class="hidden">
                 <h1>Question 4</h1>
-                <p>You find a time machine. You go to:</p>
-                <button onclick="nextQuestion('q4=1')">The signing of a nation's first constitution.</button>
-                <button onclick="nextQuestion('q4=2')">The construction of the great pyramids.</button>
-                <button onclick="nextQuestion('q4=3')">The first settlement of your ancestors.</button>
-                <button onclick="nextQuestion('q4=4')">The golden age of the Silk Road.</button>
+                <p>Scenario: On a lively street, you bump into a group of historical characters. Who do you talk to?</p>
+                <button onclick="nextQuestion('q4=1')">A smart-looking person with big ideas for business.</button>
+                <button onclick="nextQuestion('q4=2')">A friendly face who knows all about plants and nature.</button>
+                <button onclick="nextQuestion('q4=3')">Someone wearing a hard hat, ready to build something great.</button>
+                <button onclick="nextQuestion('q4=4')">A storyteller, eager to share tales of Singapore's many cultures.</button>
             </div>
             <div id="question5" class="hidden">
                 <h1>Question 5</h1>
-                <p>You must cross a mythical desert. You take:</p>
-                <button onclick="nextQuestion('q5=1')">An ancient map with hidden symbols.</button>
-                <button onclick="nextQuestion('q5=2')">A hardy camel that knows instinctively where to find water.</button>
-                <button onclick="nextQuestion('q5=3')">A compass passed down through generations.</button>
-                <button onclick="nextQuestion('q5=4')">A chest of trade goods to exchange with caravans.</button>
+                <p>Scenario: You're at a big dinner with all sorts of food. What do you try first?</p>
+                <button onclick="nextQuestion('q5=1')">A dish that looks like it's straight out of a futuristic movie.</button>
+                <button onclick="nextQuestion('q5=2')">A comforting, homemade meal like your grandparents might cook.</button>
+                <button onclick="nextQuestion('q5=3')">A filling, no-frills dish, the kind that fuels a long day's work.</button>
+                <button onclick="nextQuestion('q5=4')">A plate full of flavors from all over, like at a hawker centre.</button>
             </div>
             <div id="question6" class="hidden">
                 <h1>Question 6</h1>
-                <p>You're offered a choice of legendary tools. You choose:</p>
-                <button onclick="nextQuestion('q6=1')">A pen that records thoughts onto parchment.</button>
-                <button onclick="nextQuestion('q6=2')">A hammer that can build anything you envision.</button>
-                <button onclick="nextQuestion('q6=3')">A horn that summons the community in times of need.</button>
-                <button onclick="nextQuestion('q6=4')">Scales that can weigh the value of any item perfectly.</button>
+                <p>Scenario: In a place filled with sounds and images, one display calls out to you. Which story do you explore?</p>
+                <button onclick="nextQuestion('q6=1')">A lively scene of traders and shoppers, like in Chinatown.</button>
+                <button onclick="nextQuestion('q6=2')">A quiet corner of Singapore, filled with greenery and bird calls.</button>
+                <button onclick="nextQuestion('q6=3')">A busy building site, buzzing with energy and teamwork.</button>
+                <button onclick="nextQuestion('q6=4')">A collage of pictures and voices from many different neighborhoods.</button>
             </div>
             <div id="question7" class="hidden">
                 <h1>Question 7</h1>
-                <p>In a mystical bazaar, you are drawn to:</p>
-                <button onclick="nextQuestion('q7=1')">A scroll that details the governance of lost civilizations.</button>
-                <button onclick="nextQuestion('q7=2')">Robes that are said to protect the wearer from all toils.</button>
-                <button onclick="nextQuestion('q7=3')">A lantern that lights the way to hidden treasures.</button>
-                <button onclick="nextQuestion('q7=4')">A compass that always points towards the most profitable venture.</button>
+                <p>Scenario: Before leaving, you write a note for those who'll come after. What do you say?</p>
+                <button onclick="nextQuestion('q7=1')">"Always be ready for new ideas and chances."</button>
+                <button onclick="nextQuestion('q7=2')">"Remember the stories and beauty of our past."</button>
+                <button onclick="nextQuestion('q7=3')">"Work hard together and make big things happen."</button>
+                <button onclick="nextQuestion('q7=4')">"Celebrate the mix of people and places that make us who we are."</button>
             </div>
             <div id="question8" class="hidden">
-                <h1>Question 8</h1>
-                <p>If you could pick a mythical creature as your companion, it would be:</p>
-                <button onclick="nextQuestion('q8=1')">A phoenix, to inspire rebirth and transformation in society.</button>
-                <button onclick="nextQuestion('q8=2')">A sturdy golem, to assist in laborious tasks.</button>
-                <button onclick="nextQuestion('q8=3')">A wise old dragon, to offer counsel and protection.</button>
-                <button onclick="nextQuestion('q8=4')">A shape-shifter, to adapt to the ever-changing tides of commerce.</button>
-            </div>
-            <div id="question9" class="hidden">
                 <!-- button to generate image -->
                 <h1>Final Step:</h1>
                 <h2>Generate your Personalised Image</h2>
