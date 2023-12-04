@@ -156,8 +156,8 @@ def display_result():
             "Personality should not be an archetype. \n" \
             "Please summarize your reasoning into 3 sentences. \n" \
             "Please use the following format: \n" \
-            "Your personality is <personality> because <reasoning>. \n" \
-            "Your archetype is <archetype> because <reasoning>. \n" 
+            "Your personality is <personality> because <reasoning>. \n"
+            # "Your archetype is <archetype> because <reasoning>. \n" 
             
 
     img_prompt = "Given the quiz from quiz2.txt and the results from choices2.txt describe my personality and the archetype from the information in all the files provided. \n" \
@@ -165,12 +165,12 @@ def display_result():
                 "Please summarize your reasoning into 1 sentences using the following format to summarize: \n" \
                 "<archetype> in location such as <location>."
     
-    a_prompt = "My archetype is? \n" \
-                "Choose one of the following: \n" \
-                "The Tradesman \n" \
-                "The Fisherman \n" \
-                "The Samsui Woman \n" \
-                "The Coolie"
+    # a_prompt = "My archetype is? \n" \
+    #             "Choose one of the following: \n" \
+    #             "The Tradesman \n" \
+    #             "The Fisherman \n" \
+    #             "The Samsui Woman \n" \
+    #             "The Coolie"
 
     
 
@@ -188,7 +188,7 @@ def display_result():
     # location = query_engine.query(l_prompt)
 
     # archetypes = "The Explorer"
-    locations = ["The Sun Yat-Sen Memorial Hall", "Fort Canning Park", "The National Museum of Singapore", "The National Gallery Singapore", "The Singapore Art Museum", "The Asian Civilisations Museum", "The Peranakan Museum", "Raffles Hotel", "Chinatown", "Civilian War Memorial"]
+    locations = ["Clarke Quay", "Fort Canning Park", "Raffles Hotel", "Chinatown", "Singapore River", "Bugis Street", "Little India"]
     # location = "Fort Canning Park"
     # randomly choose 1 location from the list of locations
     import random
