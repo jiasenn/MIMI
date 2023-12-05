@@ -32,7 +32,7 @@ llm = LlamaCPP(
     
     # kwargs to pass to __init__()
     # set to at least 1 to use GPU
-    model_kwargs={"n_gpu_layers": 1}, # I need to play with this and see if it actually helps
+    model_kwargs={"n_gpu_layers": 10}, # I need to play with this and see if it actually helps
     
     # transform inputs into Llama2 format
     messages_to_prompt=messages_to_prompt,
@@ -44,15 +44,15 @@ llm = LlamaCPP(
 from llama_index import VectorStoreIndex, SimpleDirectoryReader, ServiceContext, StorageContext, load_index_from_storage
 import os
 
-# storage_directory = "./storage"
+storage_directory = "./storage"
 
-# documents = SimpleDirectoryReader('./testdata').load_data()
+documents = SimpleDirectoryReader('./testdata').load_data()
 
-# service_context = ServiceContext.from_defaults(llm=llm, chunk_size=1024,
-#                                                embed_model="local",
-#                                                callback_manager=callback_manager)
+service_context = ServiceContext.from_defaults(llm=llm, chunk_size=1024,
+                                               embed_model="local",
+                                               callback_manager=callback_manager)
 
-# storage_context = StorageContext.from_defaults(persist_dir=storage_directory)
+storage_context = StorageContext.from_defaults(persist_dir=storage_directory)
 
 # Load the pre-trained model and initialize the pipeline (as you did in your code)
 model_ckpt = "stabilityai/stable-diffusion-2-base"
@@ -140,10 +140,6 @@ def display_result():
 
     documents = SimpleDirectoryReader('./testdata').load_data()
 
-    service_context = ServiceContext.from_defaults(llm=llm, chunk_size=1024,
-                                                    embed_model="local",
-                                                    callback_manager=callback_manager)
-
     # storage_context = StorageContext.from_defaults(persist_dir=storage_directory)
 
     index = VectorStoreIndex.from_documents(documents, service_context=service_context)
@@ -152,13 +148,17 @@ def display_result():
     query_engine = index.as_query_engine(service_context=service_context,
                                         similarity_top_k=3)
 
-    query = "Given the quiz from quiz2.txt and the results from choices2.txt describe my personality and the archetype from the information in all the files provided. \n" \
+    query = "Given the quiz from quiz2.txt, the results from choices2.txt and archetype from archetype.txt, describe my personality from the information in all the files provided. \n" \
             "Personality should not be an archetype. \n" \
-            "Please summarize your reasoning into 3 sentences. \n" \
-            "Please use the following format: \n" \
-            "Your personality is <personality> because <reasoning>. \n"
+            "Please summarize your reasoning into 3 sentences. \n"
+            # "Please use the following format: \n" \
+            # "Your personality is <personality> because <reasoning>. \n" \
             # "Your archetype is <archetype> because <reasoning>. \n" 
             
+    qn = "What is the archetype in archetype.txt. Describe user personalities from the quiz answers in choices2.txt. \n" \
+        "Dont mention other archetype not in archetype.txt. \n" \
+        "Please use the following format: \n" \
+        "Based on the quiz you are <personality> because <reasoning>. \n"
 
     img_prompt = "Given the quiz from quiz2.txt and the results from choices2.txt describe my personality and the archetype from the information in all the files provided. \n" \
                 "What is your archetype and which location in Singapore best represents this archetype? \n" \
@@ -195,9 +195,7 @@ def display_result():
     location = str(random.choice(locations))
     # print("Archetype: ", result_archetype)
     print("Location: ", location)
-    end = time.time()
     
-    print("Time taken to generate description: ", end - start)
 
     # r_start = time.time()
     # prompt = query_engine.query(img_prompt)
@@ -210,10 +208,14 @@ def display_result():
     
     result_archetype = str(result_archetype)
     print(result_archetype)
-    prompt = result_archetype + " in " + location + ",Singapore, 1980s. 360 Image."
+    prompt = location + "Singapore in the 1980s, 360 image."
     # description = "Your archetype is " + result_archetype + " because " + location + " is a place where " + result_archetype + " can be found."
-    description = query_engine.query(query)
+    description = query_engine.query(qn)
     description = str(description)
+
+    end = time.time()
+    
+    print("Time taken to generate description: ", end - start)
 
     print("Archetype: ", result_archetype)
     print("Description: ", description)
