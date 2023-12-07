@@ -8,6 +8,8 @@ from llama_index.llms import LlamaCPP
 from llama_index.llms.llama_utils import messages_to_prompt, completion_to_prompt
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)  # Change INFO to DEBUG if you want more extensive logging
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
+from PIL import Image 
+import PIL  
 
 app = Flask(__name__)
 
@@ -63,8 +65,6 @@ pipe = StableDiffusionPanoramaPipeline.from_pretrained(
 
 pipe.circular_padding = True
 
-
-
 # from diffusers import DiffusionPipeline
 # pipe = DiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5", use_safetensors=False)
 
@@ -83,8 +83,6 @@ def home():
 @app.route('/index.html')
 def index():
     return render_template('index.html')
-
-# @app.route('/result', methods=['POST'])
 
 @app.route('/send-data-to-server', methods=['POST'])
 def receive_data():
@@ -119,6 +117,18 @@ def receive_data():
     print(archetype_count)
     global result_archetype
     result_archetype = archetype_lst[archetype_count.index(max(archetype_count))]
+    
+    # hardcoded LoRa generated archetype image
+    if result_archetype == "The Coolie":
+        arch_im = Image.open(r"static/Icons/coolie.jpg")
+    elif result_archetype == "The Tradesman":
+        arch_im = Image.open(r"static/Icons/tradesman.jpeg")
+    elif result_archetype == "The Fisherman":
+        arch_im = Image.open(r"static/Icons/fisherman.jpeg")
+    else:
+        arch_im = Image.open(r"static/Icons/samsui.jpeg")
+    arch_im.save("static/Icons/genereatedarche.jpg")
+    
     print(result_archetype, "is the result archetype")
         
     # save quiz_answers to a file
@@ -148,9 +158,9 @@ def display_result():
     query_engine = index.as_query_engine(service_context=service_context,
                                         similarity_top_k=3)
 
-    query = "Given the quiz from quiz2.txt, the results from choices2.txt and archetype from archetype.txt, describe my personality from the information in all the files provided. \n" \
-            "Personality should not be an archetype. \n" \
-            "Please summarize your reasoning into 3 sentences. \n"
+    # query = "Given the quiz from quiz2.txt, the results from choices2.txt and archetype from archetype.txt, describe my personality from the information in all the files provided. \n" \
+    #         "Personality should not be an archetype. \n" \
+    #         "Please summarize your reasoning into 3 sentences. \n"
             # "Please use the following format: \n" \
             # "Your personality is <personality> because <reasoning>. \n" \
             # "Your archetype is <archetype> because <reasoning>. \n" 
@@ -160,10 +170,10 @@ def display_result():
         "Please use the following format: \n" \
         "Based on the quiz you are <personality> because <reasoning>. \n"
 
-    img_prompt = "Given the quiz from quiz2.txt and the results from choices2.txt describe my personality and the archetype from the information in all the files provided. \n" \
-                "What is your archetype and which location in Singapore best represents this archetype? \n" \
-                "Please summarize your reasoning into 1 sentences using the following format to summarize: \n" \
-                "<archetype> in location such as <location>."
+    # img_prompt = "Given the quiz from quiz2.txt and the results from choices2.txt describe my personality and the archetype from the information in all the files provided. \n" \
+    #             "What is your archetype and which location in Singapore best represents this archetype? \n" \
+    #             "Please summarize your reasoning into 1 sentences using the following format to summarize: \n" \
+    #             "<archetype> in location such as <location>."
     
     # a_prompt = "My archetype is? \n" \
     #             "Choose one of the following: \n" \
@@ -172,10 +182,7 @@ def display_result():
     #             "The Samsui Woman \n" \
     #             "The Coolie"
 
-    
-
-
-    l_prompt = "The location that best represents my archetype is?"
+    # l_prompt = "The location that best represents my archetype is?"
     
     # print time taken to generate response
     import time
@@ -187,9 +194,7 @@ def display_result():
     # result_archetype = str(result_archetype)
     # location = query_engine.query(l_prompt)
 
-    # archetypes = "The Explorer"
     locations = ["Clarke Quay", "Fort Canning Park", "Raffles Hotel", "Chinatown", "Singapore River", "Bugis Street", "Little India"]
-    # location = "Fort Canning Park"
     # randomly choose 1 location from the list of locations
     import random
     location = str(random.choice(locations))
@@ -211,6 +216,17 @@ def display_result():
     prompt = location + "Singapore in the 1980s, 360 image."
     # description = "Your archetype is " + result_archetype + " because " + location + " is a place where " + result_archetype + " can be found."
     description = query_engine.query(qn)
+
+    # hardcoded description
+    # if result_archetype == "The Coolie":
+    #     description = "Your choices show a celebration of cultural diversity and a recognition of the struggles and stories of the past. This aligns with the experiences of the coolies and immigrant laborers, who contributed immensely to the multicultural tapestry of Singapore."
+    # elif result_archetype == "The Tradesman":
+    #     description = "Your selections suggest you have a knack for innovation and an interest in the bustling world of business and technology. You are forward-thinking, much like the visionary traders and merchants who played a key role in Singapore's history."
+    # elif result_archetype == "The Fisherman":
+    #     description = "Your choices reflect a deep appreciation for nature, tranquility, and the simpler things in life. This mirrors the spirit of the fishermen and villagers, who were closely tied to the natural beauty and serenity of early Singapore."
+    # else:
+    #     description = "You resonate with the qualities of hard work, dedication, and community spirit, similar to the Samsui women. These qualities were essential in shaping Singapore's development, reflecting a strong commitment to collective progress."
+
     description = str(description)
 
     end = time.time()
@@ -245,6 +261,15 @@ def collection():
 def profile():
     return render_template('profile.html')
 
+# hardcoded result
+# @app.route('/profile.html')
+# def profile():
+#     with open('testdata/archetype.txt', 'r') as f:
+#         result_archetype = f.read()
+    
+#     result_archetype = str(result_archetype)
+#     print(result_archetype)
+#     return render_template('profile.html', result_archetype=result_archetype)
 
 
 if __name__ == '__main__':
