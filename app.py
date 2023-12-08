@@ -46,15 +46,15 @@ llm = LlamaCPP(
 from llama_index import VectorStoreIndex, SimpleDirectoryReader, ServiceContext, StorageContext, load_index_from_storage
 import os
 
-storage_directory = "./storage"
+# storage_directory = "./storage"
 
-documents = SimpleDirectoryReader('./testdata').load_data()
+# documents = SimpleDirectoryReader('./testdata').load_data()
 
-service_context = ServiceContext.from_defaults(llm=llm, chunk_size=1024,
-                                               embed_model="local",
-                                               callback_manager=callback_manager)
+# service_context = ServiceContext.from_defaults(llm=llm, chunk_size=1024,
+#                                                embed_model="local",
+#                                                callback_manager=callback_manager)
 
-storage_context = StorageContext.from_defaults(persist_dir=storage_directory)
+# storage_context = StorageContext.from_defaults(persist_dir=storage_directory)
 
 # Load the pre-trained model and initialize the pipeline (as you did in your code)
 model_ckpt = "stabilityai/stable-diffusion-2-base"
@@ -122,12 +122,12 @@ def receive_data():
     if result_archetype == "The Coolie":
         arch_im = Image.open(r"static/Icons/coolie.jpg")
     elif result_archetype == "The Tradesman":
-        arch_im = Image.open(r"static/Icons/tradesman.jpeg")
+        arch_im = Image.open(r"static/Icons/tradesman.jpg")
     elif result_archetype == "The Fisherman":
-        arch_im = Image.open(r"static/Icons/fisherman.jpeg")
+        arch_im = Image.open(r"static/Icons/fisherman.jpg")
     else:
-        arch_im = Image.open(r"static/Icons/samsui.jpeg")
-    arch_im.save("static/Icons/genereatedarche.jpg")
+        arch_im = Image.open(r"static/Icons/samsui.jpg")
+    arch_im.save("static/Icons/generatedarche.jpg")
     
     print(result_archetype, "is the result archetype")
         
@@ -143,10 +143,29 @@ def receive_data():
 
 @app.route('/result', methods=['GET'])
 def display_result():
-    # with open('testdata/choices2.txt', 'r') as f:
-    #     answers_lst = f.readlines()
-    
+    with open('testdata/choices2.txt', 'r') as f:
+        answers_lst = f.readlines()
+    print(answers_lst)
+
+    import os
+ 
+    folder_path = r"./storage"  #enter path here
+    for filename in os.listdir(folder_path): 
+        file_path = os.path.join(folder_path, filename)  
+        try:
+            if os.path.isfile(file_path):
+                os.remove(file_path)  
+            elif os.path.isdir(file_path):  
+                os.rmdir(file_path)  
+        except Exception as e:  
+            print(f"Error deleting {file_path}: {e}")
+    print("Deletion done")
+
     storage_directory = "./storage"
+
+    service_context = ServiceContext.from_defaults(llm=llm, chunk_size=1024,
+                                               embed_model="local",
+                                               callback_manager=callback_manager)
 
     documents = SimpleDirectoryReader('./testdata').load_data()
 
@@ -165,10 +184,17 @@ def display_result():
             # "Your personality is <personality> because <reasoning>. \n" \
             # "Your archetype is <archetype> because <reasoning>. \n" 
             
+    # qn = "What is the archetype in archetype.txt. Describe user personalities from the quiz answers in choices2.txt. \n" \
+    #     "Dont mention other archetype not in archetype.txt. \n" \
+    #     "Please use the following format: \n" \
+    #     "Based on the quiz you are <personality> because <reasoning>. \n"
+    
     qn = "What is the archetype in archetype.txt. Describe user personalities from the quiz answers in choices2.txt. \n" \
         "Dont mention other archetype not in archetype.txt. \n" \
+        "Dont mention the filenames like archetype.txt and choices2.txt. \n" \
         "Please use the following format: \n" \
-        "Based on the quiz you are <personality> because <reasoning>. \n"
+        "Based on the quiz you are <personality> because <reasoning>. \n" \
+        "Describe what the archetype does in the past in 1 sentence. \n" \
 
     # img_prompt = "Given the quiz from quiz2.txt and the results from choices2.txt describe my personality and the archetype from the information in all the files provided. \n" \
     #             "What is your archetype and which location in Singapore best represents this archetype? \n" \
@@ -259,17 +285,12 @@ def collection():
 
 @app.route('/profile.html')
 def profile():
-    return render_template('profile.html')
-
-# hardcoded result
-# @app.route('/profile.html')
-# def profile():
-#     with open('testdata/archetype.txt', 'r') as f:
-#         result_archetype = f.read()
+    with open('testdata/archetype.txt', 'r') as f:
+        result_archetype = f.read()
     
-#     result_archetype = str(result_archetype)
-#     print(result_archetype)
-#     return render_template('profile.html', result_archetype=result_archetype)
+    result_archetype = str(result_archetype)
+    print(result_archetype)
+    return render_template('profile.html', result_archetype=result_archetype)
 
 
 if __name__ == '__main__':
