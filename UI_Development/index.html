@@ -43,79 +43,70 @@
         <div id="question-container" class="hidden">
             <div id="question1">
                 <h1>Question 1</h1>
-                <p>Morning Routine: How do you start your day in CityScape?</p>
-                <button onclick="nextQuestion('q1=1')">Checking news and updates for the city.</button>
-                <button onclick="nextQuestion('q1=2')">Heading straight to work, no time to lose.</button>
-                <button onclick="nextQuestion('q1=3')">Taking care of family or neighbors.</button>
-                <button onclick="nextQuestion('q1=4')">Visiting a community garden or local park.</button>
-                <button onclick="nextQuestion('q1=5')">Participating in a community rally or cause.</button>
+                <p>Scenario: You arrive at a bright gateway leading to different paths. Which one feels like your way?</p>
+                <img class="question-img" src="/Icons/Quiz_Img/Question_1.webp" alt="Quiz Qn 1">
+                <button onclick="nextQuestion('q1=1')">A path with flashy signs and exciting sounds, like a busy shopping district.</button>
+                <button onclick="nextQuestion('q1=2')">A quiet walkway with plants and soft lighting, like a peaceful park.</button>
+                <button onclick="nextQuestion('q1=3')">A bustling path with sounds of work and laughter, like a lively construction site.</button>
+                <button onclick="nextQuestion('q1=4')">A street filled with music and colorful decorations, like a festive market.</button>
             </div>
             
             <div id="question2" class="hidden">
                 <h1>Question 2</h1>
-                <p>Preferred Transport: How do you move around CityScape?</p>
-                <button onclick="nextQuestion('q2=1')">Chauffeured car or private cab.</button>
-                <button onclick="nextQuestion('q2=2')">Public transport, mingling with the crowds.</button>
-                <button onclick="nextQuestion('q2=3')">Walking, while helping others along the way.</button>
-                <button onclick="nextQuestion('q2=4')">Bicycle or eco-friendly options.</button>
-                <button onclick="nextQuestion('q2=5')">Organizing carpools or group rides.</button>
+                <p>Scenario: Exploring a small alley, you find something interesting. What catches your eye?</p>
+                <img class="question-img" src="/Icons/Quiz_Img/Question_2.webp" alt="Quiz Qn 2">
+                <button onclick="nextQuestion('q2=1')">A cool, shiny gadget that looks like it's from a sci-fi show.</button>
+                <button onclick="nextQuestion('q2=2')">A handmade wooden trinket that reminds you of a kampung house.</button>
+                <button onclick="nextQuestion('q2=3')">A pair of sturdy gloves, like those seen on workers at a building site.</button>
+                <button onclick="nextQuestion('q2=4')">An old, patched bag with many stories to tell, like those at the National Museum.</button>
             </div>
             <!-- Add more questions as needed -->
             <div id="question3" class="hidden">
                 <h1>Question 3</h1>
-                <p>City Event: Which event are you most likely to attend?</p>
-                <button onclick="nextQuestion('q3=1')">A leadership summit or conference.</button>
-                <button onclick="nextQuestion('q3=2')">A cultural festival celebrating heritage.</button>
-                <button onclick="nextQuestion('q3=3')">A community mentorship program.</button>
-                <button onclick="nextQuestion('q3=4')">A trade fair or business expo.</button>
-                <button onclick="nextQuestion('q3=5')">An educational seminar or workshop.</button>
+                <p>Scenario: A screen pops up asking you to make an important choice for the city. What do you pick?</p>
+                <img class="question-img" src="/Icons/Quiz_Img/Question_3.webp" alt="Quiz Qn 3">
+                <button onclick="nextQuestion('q3=1')">Starting a new business that uses the latest tech.</button>
+                <button onclick="nextQuestion('q3=2')">Saving a beautiful, old tree that's been around for ages.</button>
+                <button onclick="nextQuestion('q3=3')">Helping fix up a well-known landmark that's seen better days.</button>
+                <button onclick="nextQuestion('q3=4')">Setting up a show that tells stories from different parts of Singapore.</button>
             </div>
             <div id="question4" class="hidden">
                 <h1>Question 4</h1>
-                <p>Weekend Activity: How do you spend your weekends in CityScape?</p>
-                <button onclick="nextQuestion('q4=1')">Planning for the city's growth and development.</button>
-                <button onclick="nextQuestion('q4=2')">Exploring cultural districts and traditions.</button>
-                <button onclick="nextQuestion('q4=3')">Organizing or attending community meetings.</button>
-                <button onclick="nextQuestion('q4=4')">Checking out new business opportunities.</button>
-                <button onclick="nextQuestion('q4=5')">Volunteering or teaching.</button>
+                <p>Scenario: On a lively street, you bump into a group of historical characters. Who do you talk to?</p>
+                <img class="question-img" src="/Icons/Quiz_Img/Question_4.webp" alt="Quiz Qn 4">
+                <button onclick="nextQuestion('q4=1')">A smart-looking person with big ideas for business.</button>
+                <button onclick="nextQuestion('q4=2')">A friendly face who knows all about plants and nature.</button>
+                <button onclick="nextQuestion('q4=3')">Someone wearing a hard hat, ready to build something great.</button>
+                <button onclick="nextQuestion('q4=4')">A storyteller, eager to share tales of Singapore's many cultures.</button>
             </div>
             <div id="question5" class="hidden">
                 <h1>Question 5</h1>
-                <p>Night Out: Your idea of a perfect night out in CityScape?</p>
-                <button onclick="nextQuestion('q5=1')">An elite gathering or gala.</button>
-                <button onclick="nextQuestion('q5=2')">A vibrant street food market.</button>
-                <button onclick="nextQuestion('q5=3')">A family or community dinner.</button>
-                <button onclick="nextQuestion('q5=4')">A lakeside picnic or nature walk.</button>
-                <button onclick="nextQuestion('q5=5')">Attending a social activism event.</button>
+                <p>Scenario: You're at a big dinner with all sorts of food. What do you try first?</p>
+                <img class="question-img" src="/Icons/Quiz_Img/Question_5.webp" alt="Quiz Qn 5">
+                <button onclick="nextQuestion('q5=1')">A dish that looks like it's straight out of a futuristic movie.</button>
+                <button onclick="nextQuestion('q5=2')">A comforting, homemade meal like your grandparents might cook.</button>
+                <button onclick="nextQuestion('q5=3')">A filling, no-frills dish, the kind that fuels a long day's work.</button>
+                <button onclick="nextQuestion('q5=4')">A plate full of flavors from all over, like at a hawker centre.</button>
             </div>
             <div id="question6" class="hidden">
                 <h1>Question 6</h1>
-                <p>City Issue: CityScape faces a challenge. How do you tackle it?</p>
-                <button onclick="nextQuestion('q6=1')">Gather leaders and strategize.</button>
-                <button onclick="nextQuestion('q6=2')">Collaborate with communities for solutions.</button>
-                <button onclick="nextQuestion('q6=3')">Offer guidance and wisdom to those affected.</button>
-                <button onclick="nextQuestion('q6=4')">Invest resources and find economic solutions.</button>
-                <button onclick="nextQuestion('q6=5')">Educate the public on the issue.</button>
+                <p>Scenario: In a place filled with sounds and images, one display calls out to you. Which story do you explore?</p>
+                <img class="question-img" src="/Icons/Quiz_Img/Question_6.webp" alt="Quiz Qn 6">
+                <button onclick="nextQuestion('q6=1')">A lively scene of traders and shoppers, like in Chinatown.</button>
+                <button onclick="nextQuestion('q6=2')">A quiet corner of Singapore, filled with greenery and bird calls.</button>
+                <button onclick="nextQuestion('q6=3')">A busy building site, buzzing with energy and teamwork.</button>
+                <button onclick="nextQuestion('q6=4')">A collage of pictures and voices from many different neighborhoods.</button>
             </div>
             <div id="question7" class="hidden">
                 <h1>Question 7</h1>
-                <p>Vacation Spot: Where would you unwind outside CityScape?</p>
-                <button onclick="nextQuestion('q7=1')">A luxurious retreat.</button>
-                <button onclick="nextQuestion('q7=2')">A backpacking adventure.</button>
-                <button onclick="nextQuestion('q7=3')">A family-friendly resort.</button>
-                <button onclick="nextQuestion('q7=4')">A nature-based getaway.</button>
-                <button onclick="nextQuestion('q7=5')">A historical or educational tour.</button>
+                <p>Scenario: Before leaving, you write a note for those who'll come after. What do you say?</p>
+                <img class="question-img" src="/Icons/Quiz_Img/Question_7.webp" alt="Quiz Qn 7">
+                <button onclick="nextQuestion('q7=1')">"Always be ready for new ideas and chances."</button>
+                <button onclick="nextQuestion('q7=2')">"Remember the stories and beauty of our past."</button>
+                <button onclick="nextQuestion('q7=3')">"Work hard together and make big things happen."</button>
+                <button onclick="nextQuestion('q7=4')">"Celebrate the mix of people and places that make us who we are."</button>
             </div>
             <div id="question8" class="hidden">
-                <h1>Question 8</h1>
-                <p>City Legacy: What do you wish to contribute to CityScape?</p>
-                <button onclick="nextQuestion('q8=1')">Visionary leadership and governance.</button>
-                <button onclick="nextQuestion('q8=2')">Preservation of culture and traditions.</button>
-                <button onclick="nextQuestion('q8=3')">Community bonding and mentorship.</button>
-                <button onclick="nextQuestion('q8=4')">Economic growth and business opportunities.</button>
-                <button onclick="nextQuestion('q8=5')">Knowledge and education for all.</button>
-            </div>
-            <div id="question9" class="hidden">
                 <!-- button to generate image -->
                 <h1>Final Step:</h1>
                 <h2>Generate your Personalised Image</h2>

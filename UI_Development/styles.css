@@ -264,3 +264,9 @@ button:hover {
     max-width: 300px; 
 }
 /* make the quiz questions centered */
+
+.question-img {
+    height:100%;
+    margin-top: 11px;
+    width: 100%;
+}
