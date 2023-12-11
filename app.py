@@ -190,7 +190,7 @@ def display_result():
     #     "Based on the quiz you are <personality> because <reasoning>. \n"
     
     qn = "What is the archetype in archetype.txt. Describe user personalities from the quiz answers in choices2.txt. \n" \
-        "Dont mention other archetype not in archetype.txt. \n" \
+        "Dont mention other archetype. \n" \
         "Dont mention the filenames like archetype.txt and choices2.txt. \n" \
         "Please use the following format: \n" \
         "Based on the quiz you are <personality> because <reasoning>. \n" \
