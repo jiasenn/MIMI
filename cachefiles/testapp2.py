@@ -46,7 +46,7 @@ import os
 
 storage_directory = "./storage"
 
-documents = SimpleDirectoryReader('./testdata').load_data()
+documents = SimpleDirectoryReader('./data').load_data()
 
 service_context = ServiceContext.from_defaults(llm=llm, chunk_size=1024,
                                                embed_model="local",
@@ -109,9 +109,9 @@ def receive_data():
     result_archetype = archetype_lst[archetype_count.index(max(archetype_count))]
         
     # save quiz_answers to a file
-    with open('testdata/choices2.txt', 'w') as f:
+    with open('data/choices2.txt', 'w') as f:
         f.write(quiz_answers)
-    with open('testdata/archetype.txt', 'w') as f:
+    with open('data/archetype.txt', 'w') as f:
         f.write(result_archetype)
     print("Successfully saved quiz answers to file")
     # return the data as a JSON response
@@ -121,10 +121,10 @@ def receive_data():
 
 @app.route('/result', methods=['GET'])
 def display_result():
-    # with open('testdata/choices2.txt', 'r') as f:
+    # with open('data/choices2.txt', 'r') as f:
     #     answers_lst = f.readlines()
 
-    with open('testdata/archetype.txt', 'r') as f:
+    with open('data/archetype.txt', 'r') as f:
         archetype = f.read()
     
     print(result_archetype)

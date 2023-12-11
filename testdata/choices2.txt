@@ -1,7 +1,0 @@
-Question 1: Option: 1
-Question 2: Option: 1
-Question 3: Option: 1
-Question 4: Option: 1
-Question 5: Option: 1
-Question 6: Option: 1
-Question 7: Option: 1

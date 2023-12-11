@@ -33,7 +33,7 @@ if st.button("Submit"):
             prompt_helper = PromptHelper(max_input_size, num_output, chunk_overlap_ratio= 0.1, chunk_size_limit=max_chunk_overlap)
 
             # Load documents from the 'data' directory
-            documents = SimpleDirectoryReader('./testdata').load_data()
+            documents = SimpleDirectoryReader('./data').load_data()
             service_context = ServiceContext.from_defaults(llm_predictor=llm_predictor, prompt_helper=prompt_helper)
             index = VectorStoreIndex.from_documents(documents, service_context=service_context)
             

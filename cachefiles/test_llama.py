@@ -28,7 +28,7 @@ llm = LlamaCpp(
 )
 storage_directory = "./storage"
 
-documents = SimpleDirectoryReader('./testdata').load_data()
+documents = SimpleDirectoryReader('./data').load_data()
 
 
 service_context = ServiceContext.from_defaults(llm=llm, chunk_size=1024,

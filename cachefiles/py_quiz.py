@@ -143,6 +143,6 @@ choices.append("Archetype: " + result)
 print("\nYour result is: " + result)
 
 # Sace choices to a file
-with open("./testdata/choices.txt", "w") as file:
+with open("./data/choices.txt", "w") as file:
     for choice in choices:
         file.write(str(choice) + "\n")

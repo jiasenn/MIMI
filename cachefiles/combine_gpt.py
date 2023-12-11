@@ -62,7 +62,7 @@ if storage_directory is not None:
     index = load_index_from_storage(storage_context, service_context=service_context)
 
 else:
-    documents = SimpleDirectoryReader('./testdata').load_data()
+    documents = SimpleDirectoryReader('./data').load_data()
     index = VectorStoreIndex.from_documents(documents, service_context=service_context)
     # Persist the index to disk
     index.storage_context.persist(persist_dir=storage_directory)

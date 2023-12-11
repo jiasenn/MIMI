@@ -48,7 +48,7 @@ import os
 
 # storage_directory = "./storage"
 
-# documents = SimpleDirectoryReader('./testdata').load_data()
+# documents = SimpleDirectoryReader('./data').load_data()
 
 # service_context = ServiceContext.from_defaults(llm=llm, chunk_size=1024,
 #                                                embed_model="local",
@@ -132,9 +132,9 @@ def receive_data():
     print(result_archetype, "is the result archetype")
         
     # save quiz_answers to a file
-    with open('testdata/choices2.txt', 'w') as f:
+    with open('data/choices2.txt', 'w') as f:
         f.write(quiz_answers)
-    with open('testdata/archetype.txt', 'w') as f:
+    with open('data/archetype.txt', 'w') as f:
         f.write(result_archetype)
     print("Successfully saved quiz answers to file")
     # return the data as a JSON response
@@ -143,7 +143,7 @@ def receive_data():
 
 @app.route('/result', methods=['GET'])
 def display_result():
-    with open('testdata/choices2.txt', 'r') as f:
+    with open('data/choices2.txt', 'r') as f:
         answers_lst = f.readlines()
     print(answers_lst)
 
@@ -167,7 +167,7 @@ def display_result():
                                                embed_model="local",
                                                callback_manager=callback_manager)
 
-    documents = SimpleDirectoryReader('./testdata').load_data()
+    documents = SimpleDirectoryReader('./data').load_data()
 
     # storage_context = StorageContext.from_defaults(persist_dir=storage_directory)
 
@@ -234,7 +234,7 @@ def display_result():
     # prompt = str(prompt)
     # r_end = time.time()
     # print("Time taken to generate response: ", r_end - r_start)
-    with open('testdata/archetype.txt', 'r') as f:
+    with open('data/archetype.txt', 'r') as f:
         result_archetype = f.read()
     
     result_archetype = str(result_archetype)
@@ -285,7 +285,7 @@ def collection():
 
 @app.route('/profile.html')
 def profile():
-    with open('testdata/archetype.txt', 'r') as f:
+    with open('data/archetype.txt', 'r') as f:
         result_archetype = f.read()
     
     result_archetype = str(result_archetype)
